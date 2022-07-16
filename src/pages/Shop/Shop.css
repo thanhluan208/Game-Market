@@ -1,0 +1,548 @@
+.shopContainer {
+    width: 100%;
+    position: relative;
+}
+
+.totalItem {
+    position: absolute;
+    top: -7%;
+    right: -15%;
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 59%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopContainer::-webkit-scrollbar {
+    display: none;
+}
+
+ .shoppingCartContainer {
+    position: fixed;
+    height: 550px;
+    width: 30%;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    padding: 0% 1%;
+    top: 15%;
+    left: 0%;
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow-x: auto;
+    padding-top: 0;
+    z-index: 1999;
+    backdrop-filter: blur(100px);
+}
+
+.shoppingCartContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.checkOutBox {
+    display:flex;
+    justify-content:right;
+    bottom:5%;
+    right: 5%;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.checkOutBtn {
+    background-color: #3ec2ae !important;
+    border-radius: 15px !important;
+    box-shadow: 0 15px 25px rgb(0 0 0 / 40%);
+    color: #fff !important;
+    backdrop-filter: blur(10px);
+}
+
+.cartDeactive {
+    transform:translate(-45%,-0%) rotate3d(1,1,1,180deg) scale(0.001) ;
+}
+
+
+
+
+.cartActive {
+    transform: unset;
+}
+
+.closeCart {
+    background-color: #3ec2ae !important;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    box-shadow: 0 15px 25px rgb(0 0 0 / 40%);
+    color: #fff !important;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.shoppingCartContainer .cartTitle {
+    position: sticky;
+    width: 100%;
+}
+
+.shoppingCartContainer .cartTitle .title {
+    font-size: 45px;
+    color: #fff;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.shoppingCartContainer .cartTitle .numberTotal {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #eee;
+    font-size: 20px;
+}
+
+.cartItemContainer {
+    display: flex;
+    padding: 3%;
+    height: 15%;
+    margin-top: 5%;
+    box-shadow: 0 15px 25px rgb(255 255 255 / 40%);
+    border-radius: 15px;
+    animation: fromLeft 1s ease-in-out;
+}
+
+@keyframes fromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.cartItemContainer .cartItemImg {
+    height: 100%;
+    width: 20%;
+    border-radius: 10px;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.cartItemContainer .cartInfo {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    padding-left:5%;
+    text-align: left;
+    color: #fff;
+    align-items: center;
+    font-weight: 600;
+}
+
+
+
+.cartBtn {
+    position: fixed !important;
+    background: rgba(255,255,255,0.3) !important;
+    border-radius: 15px !important;
+    border-top-left-radius: unset !important;
+    border-bottom-left-radius: unset !important;
+    color: #fff !important;
+    height: 150px;
+    top: 40%;
+    z-index: 10000;
+    backdrop-filter: blur(15px);
+}
+
+.cartItemContainer .cartItemPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    font-size: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.cartItemContainer .cartItemRemove {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.poplarGameContainer{
+    padding: 3% ;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+
+
+.poplarGameContainer .popularGameTitle {
+    position: relative;
+    margin-bottom: 5%;
+}
+
+ .title {
+    font-size: 35px;
+    color: #fff;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    height: 10%;
+}
+.poplarGameContainer .popularGameTitle .more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #eee;
+    font-size: 15px;
+}
+
+.poplarGameContainer .popularGames {
+    position: relative;
+    height: 300px;
+    display: flex;
+}
+
+.poplarGameContainer .poplarGames .imgBox {
+    background-size: cover !important;
+}
+.gameContainer {
+    height: 100%;
+    width: 20%;
+    position: relative;
+    margin-right: 7%;
+}
+
+.gameContainer:nth-last-child(1) {
+    margin-right: 0;
+}
+
+.gameImgBox {
+    width: 100%;
+    height: 85%;
+    background-size: cover !important;
+    background-position: center !important;
+    margin-bottom: 2%;
+    border-radius: 15px;
+    position: relative;
+    transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gameInfo {
+    color:#fff;
+
+}
+.gameInfo .gameName {
+    text-align: left;
+    
+}
+
+.gameInfo .gamePrice {
+    text-align: right;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    color: #db8b05;
+}
+
+.addGame{
+    opacity: 0;
+}
+
+.gameImgBox:hover {
+    box-shadow: 0 15px 25px #3ec2ae;
+}
+
+.gameImgBox:hover .addGame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    font-size: 60px;
+    left: 0;
+    color: #fff;
+    background: rgba(255,255,255,0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    transition:all .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 1;
+}
+.navigationGame {
+    display: flex;
+    justify-content: right;
+    margin-top: 2%;
+    position: relative;
+    height: 35px;
+}
+
+.navLeft, .navRight {
+    background: rgba(255,255,255,0.2) !important;
+    border-radius: 15px !important;
+    color: #fff !important;
+}
+
+.navLeft {
+    position: absolute !important;
+    top: 0%;
+    left: 0;
+}
+
+.disable {
+    display: none !important;
+}
+
+.gameSlide {
+    height: 450px;
+    overflow-x: auto;
+    position: relative;
+    padding: 3%;
+}
+
+.gameSlide::-webkit-scrollbar {
+    display: unset !important;
+}
+
+
+.gameSlide::-webkit-scrollbar-thumb {
+    background: #42b0a0;
+    border-radius: 15px;
+}
+
+.gameSlideBox {
+    width: fit-content;
+    display: flex;
+    height: 70%;
+    margin-top: 5%;
+    position: relative;
+    padding: 0 5%;
+}
+
+.test {
+    background: #fff;
+    height: 100%;
+    width: 286px;
+    display: inline-block;
+    margin-right: 5%;
+}
+
+.gameSlide .title {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.gameSlide .gameSlideSubTitle {
+    margin-top: 10%;
+    margin-bottom: 2%;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.toSignIn {
+    background: #55c3b2 !important;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3) !important;
+}
+
+.recommendGame {
+    width: 600px;
+    height: 230px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 15px;
+    margin-right: 3%;
+    position: relative;
+    display: flex;
+    padding: 40px 10px;
+    transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+
+
+.recommendGame .recommendGameBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain !important;
+    background-position: center !important;
+    border-radius: 15px;
+    filter: blur(20px);
+    opacity: 0.6;
+}
+
+.recommendGame:hover {
+    background-color: #42b0a0;
+    box-shadow: 0 15px 25px rgba(255,255,255,0.3);
+}
+
+.recommendGame:hover .recommendGameBackground {
+    display: none !important;
+}
+
+.recommendGame:hover .recommendGameBtn {
+    background: rgba(255,255,255,0.8) !important;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    color: #000 !important;
+}
+
+.recommendGame .recommendGameImg {
+    z-index: 100;
+    width: 35%;
+    height: 100%;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 15px;
+}
+
+.recommendGame .recommendGameInfo {
+    margin-left: 5%;
+    width: 60%;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+}
+
+.recommendGame .recommendGameInfo .recommendGameName{
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.recommendGame .recommendGameInfo .recommendGameStar {
+    font-size: 12px;
+    margin-bottom: 5%;
+}
+
+.recommendGame .recommendGameInfo .recommendGameDesc {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 5%;
+}
+
+.recommendGame .recommendGameInfo .recommendGameBtn {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    background: #3ec2ae;
+    border-radius: 15px;
+}
+
+.topGameDownloadedContainer {
+    height: 100%;
+    margin-top: 10%;
+}
+
+.topGameDownloadedContent {
+    height: 550px;
+    display: flex;
+    margin-top: 5%;
+}
+
+.topGameDownloadedBox {
+    width: 60%;
+    margin: 5% 0;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+
+.topGameDownloadedBox .topGameDownloaded {
+    display: flex;
+    padding: 1% 3%;
+    height: 20%;
+    border-bottom: solid 1px #ccc;
+}
+
+
+
+.topGameDownloadedBox .topGameDownloaded:hover {
+    border-radius: 15px;
+    transform: scaleX(1.05);
+    border: unset;
+    background: #fff;
+}
+
+.topGameDownloaded:hover  .topGameDownloadedTitle,.topGameDownloaded:hover .topGameDownloadedAction {
+    color: #000;
+}
+
+.topGameDownloaded:nth-child(1) {
+    margin: unset;
+}
+
+.topGameDownloadedDetail {
+    width: 40%;
+    background: #42b0a0;
+    border-radius: 15px;
+    box-shadow: -10px 0px 20px rgb(0 0 0);
+    animation: fromLeft 2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    z-index: 1000;
+}
+
+.topGameDownloadedImg {
+    background-size: cover !important;
+    height: 100%;
+    width: 30%;
+
+}
+
+.topGameDownloadedInfo {
+    margin-left: 5%;
+    text-align: left;
+    display: grid;
+    width: 35%;
+}
+
+.topGameDownloadedInfo .topGameDownloadedTitle {
+    font-size: 20px;
+    color: #fff;
+}
+
+.topGameDownloadedAction {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.pagination {
+    border-radius: 15px !important;
+    margin-top: 5%;
+}
+
+.paginationLeft,.paginationRight {
+    background: #fff !important;
+}
+.paginationLeft {
+    margin-right: 5% !important;
+}
+.paginationRight {
+    margin-left: 5% !important;
+}

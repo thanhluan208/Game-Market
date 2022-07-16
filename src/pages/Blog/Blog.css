@@ -1,0 +1,217 @@
+.BlogTitle {
+    font-size: 45px;
+    color: #fff;
+    text-align: left;
+    height: 60px;
+    position: relative;
+}
+
+.loading {
+    font-size: 60px;
+    color: #fff;
+    margin-top: 10%;
+}
+
+.TopicBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 33%;
+    border-bottom: solid 5px #63d2c1;
+}
+
+.Topic {
+    color: #fff !important;
+    font-size: 20px !important; 
+    border-radius: 10px !important;
+    border-bottom-left-radius: unset !important;
+    border-bottom-right-radius: unset !important;
+
+}
+
+.createPost {
+    position: absolute !important;
+    top: 20%;
+    right: 0;
+    background: #42b0a0 !important;
+    color: #fff !important;
+    box-shadow: 0 15px 25px rgb(0 0 0 / 50%) !important;
+}
+
+.createDialog {
+    backdrop-filter: blur(15px);
+}
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    height: 80%;
+    width: 80%;
+    max-width: unset !important;
+}
+
+.inputHeader {
+    margin-top: 15px;
+}
+
+.inputTitle {
+    width: 50%;
+    margin-right: 5%!important;
+}
+.inputTag {
+    width: 25%;
+}
+.inputBody {
+    width: 80%;
+    margin-top: 20px !important;
+}
+
+.active {
+    background-color: #63d2c1 !important;
+}
+
+.postContainer {
+    margin: 5% 0;
+}
+
+.postBox {
+    height: 300px;
+    width: 31%;
+    background: #000;
+    display: inline-block;
+    margin: 1%;
+    background: rgba(255,255,255,0.7);
+    color: #000;
+    border-radius: 5px;
+    position: relative;
+}
+
+.postBody {
+    color: #4e4e4e;
+}
+
+.ultility {
+    position: absolute !important;
+    top: 5%;
+    right: 5%;
+    width: 35px;
+    height: 35px;
+    min-width: unset !important;
+    min-height: unset !important;
+    border-radius: 50% !important;
+    color: #000 !important;
+    z-index: 100;
+}
+
+
+.subUltility {
+    position: absolute !important;
+    top: 2%;
+    right: 2%;
+    width: 35px;
+    height: 35px;
+    min-width: unset !important;
+    min-height: unset !important;
+    border-radius: 50% !important;
+    color: #fff !important;
+    opacity: 0;
+    z-index: 99;
+    transition:all .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+#favorite {
+    background-color: #ff7a7a !important;
+}
+#like {
+    background-color: #5188ff !important;
+}
+#dislike {
+    background-color: #fe2a2a !important;
+}
+#report {
+    background-color: rgb(255, 236, 70) !important;
+}
+
+.postBox:hover .favorCount {
+    color: #ff7a7a !important;
+}
+.postBox:hover .likeCount {
+    color: #5188ff  !important;
+}
+.postBox:hover .dislikeCount {
+    color: #fe2a2a !important;
+}
+
+.ultiActive {
+    opacity: 1;
+    background-color: rgba(255,255,255,0.3) !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    transition:all .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    backdrop-filter: blur(15px);
+}
+
+.ultiActive:nth-child(2) {
+    top: -12%;
+    right: 5%;
+}
+
+
+.ultiActive:nth-child(3) {
+    right: 20%;
+    top: 5%;
+}
+
+.ultiActive:nth-child(4) {
+    right: -10%;
+    top: 5%;
+}
+
+.ultiActive:nth-child(5) {
+    right: 5%;
+    top:  20%;
+}
+
+.postBox:hover {
+    box-shadow: 0 15px 25px rgba(255,255,255,0.6);
+}
+
+.postTitle {
+    font-size: 20px;
+    font-weight: 550;
+    height: 15%;
+    padding: 5% 2% 2% 5%;
+    overflow: hidden;
+    text-align: left;
+    width: 78%;
+}
+
+.postBody {
+    height: 50%;
+    overflow: hidden;
+    padding: 5% 5% 2% 5%;
+    text-align: left;
+    font: 16px/20px 'Open Sans', sans-serif;
+}
+
+.footer {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4e4e4e !important; 
+}
+
+.counterBox {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+    padding: 0 3%;
+    
+}
+
+.counter {
+    transition: all .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.publishedDate {
+    width: 35%;
+}

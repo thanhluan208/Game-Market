@@ -1,0 +1,6 @@
+export const SET_GAME_NAME = 'set_game_name'
+export const SET_CURRENT_PAGE ='set_current_page'
+export const SET_CUSTOMER = 'set_customer'
+export const REMOVE_CUSTOMER = 'remove_customer'
+export const SET_CART_ITEMS = 'set_cart_items'
+export const REMOVE_CART_ITEMS = 'remove_cart_items'
