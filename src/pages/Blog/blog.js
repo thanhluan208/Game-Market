@@ -28,7 +28,7 @@ function Blog() {
       .catch((error) => {
         console.log(error);
       });
-  }, [instance])
+  }, [])
 
 
 

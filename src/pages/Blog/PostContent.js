@@ -148,52 +148,52 @@ function PostContent({ post }) {
 
     return (
         <React.Fragment>
-        <Button onClick={() => setActive(!active)} className="ultility">
-            <MoreHorizIcon />
-        </Button>
-        <Button
-            onClick={() => handleUltiClick("favorite")}
-            id={favorite ? "favorite" : ""}
-            className={active ? "subUltility ultiActive" : "subUltility"}
-        >
-            <FavoriteIcon />
-        </Button>
-        <Button
-            onClick={() => {handleUltiClick("like")}}
-            id={like ? "like" : ""}
-            className={active ? "subUltility ultiActive" : "subUltility"}
-        >
-            <ThumbUpIcon />
-        </Button>
-        <Button
-            onClick={() => {handleUltiClick("dislike")}}
-            id={dislike ? "dislike" : ""}
-            className={active ? "subUltility ultiActive" : "subUltility"}
-        >
-            <ThumbDownIcon />
-        </Button>
-        <Button
-            onClick={() => {handleUltiClick("report")}}
-            id={report ? "report" : ""}
-            className={active ? "subUltility ultiActive" : "subUltility"}
-        >
-            <ReportProblemIcon />
-        </Button>
-        <div className="postTitle">
-            {post.title.length > 45
-            ? post.title.substring(0, 45 + 1) + "..."
-            : post.title}
-        </div>
-
-        <div className="postBody">{post.body}</div>
-        <div className="footer">
-            <div className="counterBox">
-                <div className="counter favorCount"><FavoriteIcon /> {favorCount}</div>
-                <div className="counter likeCount"> <ThumbUpIcon /> {likeCount}</div>
-                <div className="counter dislikeCount"> <ThumbDownIcon /> {dislikeCount}</div>
+            <Button onClick={() => setActive(!active)} className="ultility">
+                <MoreHorizIcon />
+            </Button>
+            <Button
+                onClick={() => handleUltiClick("favorite")}
+                id={favorite ? "favorite" : ""}
+                className={active ? "subUltility ultiActive" : "subUltility"}
+            >
+                <FavoriteIcon />
+            </Button>
+            <Button
+                onClick={() => {handleUltiClick("like")}}
+                id={like ? "like" : ""}
+                className={active ? "subUltility ultiActive" : "subUltility"}
+            >
+                <ThumbUpIcon />
+            </Button>
+            <Button
+                onClick={() => {handleUltiClick("dislike")}}
+                id={dislike ? "dislike" : ""}
+                className={active ? "subUltility ultiActive" : "subUltility"}
+            >
+                <ThumbDownIcon />
+            </Button>
+            <Button
+                onClick={() => {handleUltiClick("report")}}
+                id={report ? "report" : ""}
+                className={active ? "subUltility ultiActive" : "subUltility"}
+            >
+                <ReportProblemIcon />
+            </Button>
+            <div className="postTitle">
+                {post.title.length > 45
+                ? post.title.substring(0, 45 + 1) + "..."
+                : post.title}
             </div>
-            <div className="publishedDate">{post.createdAt.substring(0,10)}</div>
-        </div>
+
+            <div className="postBody">{post.body}</div>
+            <div className="footer">
+                <div className="counterBox">
+                    <div className="counter favorCount"><FavoriteIcon /> {favorCount}</div>
+                    <div className="counter likeCount"> <ThumbUpIcon /> {likeCount}</div>
+                    <div className="counter dislikeCount"> <ThumbDownIcon /> {dislikeCount}</div>
+                </div>
+                <div className="publishedDate">{post.createdAt.substring(0,10)}</div>
+            </div>
         </React.Fragment>
     );
 }

@@ -12,7 +12,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 
-import { useStore } from '../../Store'
+import { useStore,actions } from '../../Store'
+
+import { CreateNotification } from "../../Component/Notification";
 
 function CreatePost() {
     const [open, setOpen] = useState(false);
@@ -20,11 +22,13 @@ function CreatePost() {
     const customer = state.customer
 
     const [post, setPost] = useState({
-        author: customer.name,
-        title: "",
         body: "",
+        cover: "https://picsum.photos/seed/19787/1920/270",
+        id: 101,
+        isDraft: false,
         tag: "",
-        createAt: "",
+        createdAt: new Date().toISOString(),
+        title: "",
     });
 
 
@@ -36,11 +40,12 @@ function CreatePost() {
         setOpen(false);
     };
     const handleConfirm = () => {
-        setPost({
-            ...post,
-            createAt: new Date().toLocaleString(),
-        });
-        console.log(post);
+        if(customer.status === "active") {
+            dispatch(actions.addPost(post))
+        } else {
+            CreateNotification("error","Please sign in first",'Create Post failed')
+        }
+        setOpen(false);
     }
 
     return (
@@ -50,7 +55,7 @@ function CreatePost() {
             variant="outlined"
             onClick={handleClickOpen}
         >
-            Open form dialog
+            Create post
         </Button>
         <Dialog className="createDialog" open={open} onClose={handleClose}>
             <DialogTitle>Create your own post now!</DialogTitle>
@@ -94,13 +99,12 @@ function CreatePost() {
                     className="inputBody"
                     multiline
                     rows={8}
-                    rowsMax={10}
                 />
             </DialogContentText>
             </DialogContent>
             <DialogActions>
             <Button onClick={handleClose}>Cancel</Button>
-            <Button onClick={handleClose}>Confirm</Button>
+            <Button onClick={handleConfirm}>Confirm</Button>
             </DialogActions>
         </Dialog>
         </React.Fragment>

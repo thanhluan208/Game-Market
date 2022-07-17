@@ -21,24 +21,29 @@ function SignIn({accountStatus}) {
     const Customer = {
         name : oldCustomer.UserName,
         avatar:customerAva,
-        status:"active"
+        status:"active",
+        posts:[]
       }
 
     
     const handleSignIn = () => {
-      console.log(oldCustomer)
       if(oldCustomer.UserName === "") {
         CreateNotification("error","Please enter your username",'Log In failed')
       }
-      dispatch(actions.setCustomer(Customer))
+      else {
+        dispatch(actions.setCustomer(Customer))
+        CreateNotification("success",`Welcome back ${oldCustomer.UserName.toUpperCase()}! Lets continue your journey`,'Log In success',3000)
+      }
     }
 
     const handleSignUp = () => {
-      console.log(newCustomer)
       if(newCustomer.UserName === "") {
         CreateNotification("error","Please enter your username",'Sign Up failed')
       }
-      dispatch(actions.setCustomer(Customer))
+      else {
+        dispatch(actions.setCustomer({...Customer,name:newCustomer.UserName}))
+        CreateNotification("success",`Welcome ${newCustomer.UserName.toUpperCase()}!, lets start your journey now!`,'Sign Up success',3000)
+      }
     }
     
   return (

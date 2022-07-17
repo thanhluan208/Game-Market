@@ -81,6 +81,7 @@
     color: #000;
     border-radius: 5px;
     position: relative;
+    transition: all .2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 .postBody {
@@ -110,7 +111,7 @@
     min-width: unset !important;
     min-height: unset !important;
     border-radius: 50% !important;
-    color: #fff !important;
+    color: #000 !important;
     opacity: 0;
     z-index: 99;
     transition:all .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
@@ -141,12 +142,13 @@
 
 .ultiActive {
     opacity: 1;
-    background-color: rgba(255,255,255,0.3) !important;
+    background-color: rgba(255,255,255,1) !important;
     display: flex !important;
     justify-content: center;
     align-items: center;
     transition:all .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     backdrop-filter: blur(15px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.8);
 }
 
 .ultiActive:nth-child(2) {
@@ -171,7 +173,11 @@
 }
 
 .postBox:hover {
-    box-shadow: 0 15px 25px rgba(255,255,255,0.6);
+    box-shadow: 0 15px 25px rgb(0 0 0 / 80%);
+    transform: scale(1.2);
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
 }
 
 .postTitle {

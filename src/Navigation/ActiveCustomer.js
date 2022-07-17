@@ -33,9 +33,11 @@ function ActiveCustomer({ customer }) {
 
 
   return (
-    <Link className="customer" to="/logIn">
-      <div className="customerAva" style={{ background: `url(${customer.avatar})` }}></div>
-      <span className="customerName">{customer.name}</span>
+    <div className="customer" >
+      <Link to="/personal" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <div className="customerAva" style={{ background: `url(${customer.avatar})` }}></div>
+        <span className="customerName">{customer.name}</span>
+      </Link>
       <Button className="logOut" variant="outlined" onClick={handleClickOpen}> <LogoutIcon/> </Button>
       <Dialog
         open={open}
@@ -59,7 +61,7 @@ function ActiveCustomer({ customer }) {
           </Button>
         </DialogActions>
       </Dialog>
-    </Link>
+    </div>
   );
 }
 
