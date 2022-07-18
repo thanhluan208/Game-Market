@@ -22,7 +22,8 @@ function SignIn({accountStatus}) {
         name : oldCustomer.UserName,
         avatar:customerAva,
         status:"active",
-        posts:[]
+        posts:[],
+        title: "Admin",
       }
 
     

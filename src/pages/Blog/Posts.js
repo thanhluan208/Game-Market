@@ -12,13 +12,6 @@ function Posts({posts,tag}) {
     const [hasMore, setHasMore] = useState(true)
     const [Posts, setPosts] = useState([...posts])
 
-    let test1 = [1,2,3,4,5]
-    let test2 = ['6','7','8','9','10']
-
-    console.log("test1",test1,"test2",test2)
-    test1 = [...test1, ...test2]
-    console.log("new test1",test1)
-    
     const [state,] = useStore()
     const customer = state.customer
 
@@ -58,10 +51,9 @@ function Posts({posts,tag}) {
     },[customer.posts])
 
     useEffect(() => {
-        setPosts(posts.reverse())
+        setPosts(posts)
     },[posts])
 
-    console.log(Posts)
 
     return (
        <React.Fragment>

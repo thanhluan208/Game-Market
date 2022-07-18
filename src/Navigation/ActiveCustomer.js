@@ -34,7 +34,7 @@ function ActiveCustomer({ customer }) {
 
   return (
     <div className="customer" >
-      <Link to="/personal" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+      <Link onClick={ () => {dispatch(actions.setCurrentPage('admin'))}} to="/user" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <div className="customerAva" style={{ background: `url(${customer.avatar})` }}></div>
         <span className="customerName">{customer.name}</span>
       </Link>

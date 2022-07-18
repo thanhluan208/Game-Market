@@ -15,13 +15,9 @@ function Blog() {
   const [posts, setPosts] = useState([]);
   const [isActive, setIsActive] = useState(1);
 
-  const instance = axios.create({
-    baseURL: "https://mockend.com/mockend/demo/posts?createdAt_order=desc",
-  });
-
   useEffect(() => {
-    instance
-      .get("/posts")
+    axios
+      .get("https://mockend.com/mockend/demo/posts")
       .then((response) => {
         setPosts(response.data);
       })

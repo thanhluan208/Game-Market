@@ -32,6 +32,7 @@ function Nav() {
           <Link onClick={ () => {dispatch(actions.setCurrentPage('blog'))}} className={state.currentPage === 'blog' ? 'pageActive tab' : 'tab'} to="/Blog">Blog</Link>
           <Link onClick={ () => {dispatch(actions.setCurrentPage('review'))}} className={state.currentPage === 'review' ? 'pageActive tab' : 'tab'} to="/Review">Review</Link>
           <Link onClick={ () => {dispatch(actions.setCurrentPage('about'))}} className={state.currentPage === 'about' ? 'pageActive tab' : 'tab'} to="/About">About</Link>
+          {currentCustomer.name.toLowerCase() === 'admin' ? <Link onClick={ () => {dispatch(actions.setCurrentPage('admin'))}} className={state.currentPage === 'admin' ? 'pageActive tab' : 'tab'} to="/admin">Admin</Link> : null}
         </Grid>
         <Grid item xs={2} className="logContainer">
           {currentCustomer?.status === "nonActive" ? 

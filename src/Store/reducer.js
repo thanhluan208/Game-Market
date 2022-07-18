@@ -16,6 +16,7 @@ const initState = {
         avatar: "",
         name: "",
         posts: [],
+        title: "",
     },
     cartItems: [],
 };

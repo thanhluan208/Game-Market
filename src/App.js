@@ -12,7 +12,9 @@ import About from './pages/About.js';
 import Product from './pages/Product/product'
 import LogIn from './pages/LogIn/LogIn';
 import Customer from './pages/Customer/Customer';
-import Personal from './pages/Personal/Personal';
+import Admin from './pages/Admin/Admin'
+import User from './pages/User/User'
+
 
 import 'react-notifications/lib/notifications.css';
 
@@ -30,7 +32,8 @@ function App() {
         <Route path = "/product" element={<Product/>}/>
         <Route path = "/logIn" element={<LogIn/>}/>
         <Route path = "/customer" element={<Customer/>}/>
-        <Route path = "/personal" element={<Personal/>}/>
+        <Route path = "/user" element={<User/>}/>
+        <Route path = "/admin" element={<Admin/>}/>
       </Routes>
     </div>
   );
