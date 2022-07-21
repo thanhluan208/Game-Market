@@ -1,139 +1,214 @@
 .UserBG {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-size: cover !important;
-    background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover !important;
+  background-position: center;
 }
 
 .UserBG::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .UserContainer {
-    height: 90vh;
-    position: relative;
-    padding: 1%;
+  height: 90vh;
+  position: relative;
+  padding: 1%;
 }
 
 .UserContainer .UserInfo {
-    padding: 2%;
-    padding-bottom: 0;
-    background: rgba(255,255,255,0.3);
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
-    height: 95%;
+  padding: 2%;
+  padding-bottom: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  height: 95%;
 }
 
-.UserContainer .UserInfo  .UserAvatar {
-    height: 150px;
-    width: 100%;
-    border-radius: 15px;
-    background-size: cover !important;
+.UserContainer .UserInfo .UserAvatar {
+  height: 150px;
+  width: 100%;
+  border-radius: 15px;
+  background-size: cover !important;
 }
 
 .UserContainer .UserInfo .UserName {
-    margin-top: 5%;
-    font-size: 2rem;
-    color: #fff;
-    text-align:left;
-    padding: 0 5%;
+  margin-top: 5%;
+  font-size: 2rem;
+  color: #fff;
+  text-align: left;
+  padding: 0 5%;
 }
 
 .UserContainer .UserInfo .UserTitle {
-    display: flex;
-    margin-top: 5%;
-    padding: 0 5%;
-    color: #ccc;
-    font-size: 1rem;
+  display: flex;
+  margin-top: 5%;
+  padding: 0 5%;
+  color: #ccc;
+  font-size: 1rem;
 }
 
 .UserContainer .UserInfo .UserStatBox {
-    display: flex;
-    margin-top: 15%;
-    justify-content: space-around;
+  display: flex;
+  margin-top: 15%;
+  justify-content: space-around;
 }
 
 .UserContainer .UserInfo .UserStatBox .Stat {
-    font-size: 25px;
-    color: #fff;
+  font-size: 25px;
+  color: #fff;
 }
 .UserContainer .UserInfo .UserStatBox .Stat div {
-    font-size: 15px;
-    color: #ccc;
+  font-size: 15px;
+  color: #ccc;
 }
 
 .UserContainer .UserInfo .optionBox {
-    margin-top: 15%;
+  margin-top: 15%;
 }
 
 .UserContainer .UserInfo .optionBox .optionBtn {
-    width: 100%;
-    color: #ccc;
-    justify-content: left;
-    margin: 5% 0;
+  width: 100%;
+  color: #ccc;
+  justify-content: left;
+  margin: 5% 0;
 }
 
-.leftBtn,.rightBtn {
-    transform: rotateZ(45deg);
-    position: absolute;
-    height: 100%;
-    width: 20%;
-    background: #fff;
+.leftBtn,
+.rightBtn {
+  transform: rotateZ(45deg);
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  background: #fff;
 }
 
 .leftBtn {
-    left: -8%;
+  left: -8%;
 }
 .rightBtn {
-    right: -8%;
+  right: -8%;
 }
 
 .UserContainer .UserInfo .optionBox .currentOption {
-    color: #fff !important;
-    background: rgba(255,255,255,0.3);
-    display: flex;
-    justify-content: center;
-    transition: .5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    overflow: hidden;
-    font-size: 15px;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  overflow: hidden;
+  font-size: 15px;
 }
 
 .UserContainer .UserInfo .EditBtn {
-    margin-top: 15%;
-    width: 100%;
-    color: #fff;
-    background-image: linear-gradient(242deg, #3ec2ae 0%, #70d7c7 100%);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+  margin-top: 15%;
+  width: 100%;
+  color: #fff;
+  background-image: linear-gradient(242deg, #3ec2ae 0%, #70d7c7 100%);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 }
 
-
 .UserContent {
-    height: 95%;
-    padding: 0 2%;
+  height: 95%;
+  padding: 0 2%;
 }
 
 .UserContent .UserGreeting {
-    width: 90%;
-    height: 25%;
-    margin: 0 5%;
-    background: rgba(255,255,255,0.3);
-    border-radius: 15px;
-    box-shadow: 0 15px 25px rgb(0 0 0 / 50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    color: #fff;
-    backdrop-filter: blur(10px);
+  width: 90%;
+  height: 25%;
+  margin: 0 5%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  color: #fff;
+  backdrop-filter: blur(10px);
 }
+
+.editContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editContainer .editBox {
+  width: 1000px;
+  height: 80vh;
+}
+
+.editContainer .editBox .editInput {
+  width: 40%;
+  margin: 2% 5%;
+}
+
+.editContainer .editBox .editSubtitle {
+  width: 90%;
+  margin: 2% 5%;
+}
+
+.editContainer .editBox .editBackgroundContainer {
+  margin: 2% 5%;
+  width: 90%;
+  height: 200px;
+  overflow: auto;
+}
+
+.editContainer .editBox .editBackgroundContainer::-webkit-scrollbar {
+  display: unset !important;
+}
+
+
+.editContainer .editBox .editBackgroundContainer::-webkit-scrollbar-thumb {
+  background: #42b0a0;
+  border-radius: 15px;
+}
+
+.editContainer .editBox .editBackgroundContainer .editBackgroundBox {
+    height: 90%;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    position: relative;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.editContainer .editBox .editBackgroundContainer .editBackgroundBox .editBackground {
+  background-size: cover !important;
+  height: 90%;
+  width: 400px;
+  margin: 0 5%;
+}
+
+.editContainer .editBox .editBackgroundContainer .editBackgroundBox .editBackground::after {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+  border: solid 1px #000;
+  border-radius: 10px;
+}
+
+.editContainer .editBox .editBackgroundContainer .editBackgroundBox .editBackground:nth-child(1) {
+  margin-left: 0;
+}
+
+.editContainer .editBox .editBackgroundContainer .editBackgroundBox .editBackground:nth-last-child(1) {
+  margin-right: 0;
+}
+

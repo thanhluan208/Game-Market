@@ -11,6 +11,8 @@ import { CreateNotification } from "../../Component/Notification";
 
 import { useStore, actions } from '../../Store'
 
+import UserBG3 from "../../Images/User/BG3.jpg"
+
 
 function SignIn({accountStatus}) {
 
@@ -24,6 +26,8 @@ function SignIn({accountStatus}) {
         status:"active",
         posts:[],
         title: "Admin",
+        backgroundProfile:UserBG3,
+        subtitle:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
       }
 
     
@@ -33,7 +37,7 @@ function SignIn({accountStatus}) {
       }
       else {
         dispatch(actions.setCustomer(Customer))
-        CreateNotification("success",`Welcome back ${oldCustomer.UserName.toUpperCase()}! Lets continue your journey`,'Log In success',3000)
+        CreateNotification("success",`Welcome back ${oldCustomer.UserName.toUpperCase()}! Lets continue your journey`,'Log In success',300)
       }
     }
 
@@ -43,7 +47,7 @@ function SignIn({accountStatus}) {
       }
       else {
         dispatch(actions.setCustomer({...Customer,name:newCustomer.UserName}))
-        CreateNotification("success",`Welcome ${newCustomer.UserName.toUpperCase()}!, lets start your journey now!`,'Sign Up success',3000)
+        CreateNotification("success",`Welcome ${newCustomer.UserName.toUpperCase()}!, lets start your journey now!`,'Sign Up success',300)
       }
     }
     

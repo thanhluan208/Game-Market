@@ -18,6 +18,8 @@ import { CreateNotification } from "../../Component/Notification";
 
 function CreatePost() {
     const [open, setOpen] = useState(false);
+    const [bodyErr, setBodyErr] = useState(false)
+    const [titleErr,setTitleErr] = useState(false)
     const [state, dispatch] = useStore()
     const customer = state.customer
 
@@ -26,7 +28,7 @@ function CreatePost() {
         cover: "https://picsum.photos/seed/19787/1920/270",
         id: 101,
         isDraft: false,
-        tag: "",
+        tag: "one",
         createdAt: new Date().toISOString(),
         title: "",
     });
@@ -40,12 +42,17 @@ function CreatePost() {
         setOpen(false);
     };
     const handleConfirm = () => {
-        if(customer.status === "active") {
-            dispatch(actions.addPost(post))
-        } else {
+        if(customer.status !== "active") {
             CreateNotification("error","Please sign in first",'Create Post failed')
+            setOpen(false)
         }
-        setOpen(false);
+        if(post.body === "") {setBodyErr(true)} else {setBodyErr(false)}
+        if(post.title === "") {setTitleErr(true)} else {setTitleErr(false)}
+        if(customer.status === "active" && post.body !== "" && post.title !== ""){
+            CreateNotification("success","Post created successfully",'Create Post Success')
+            dispatch(actions.addPost(post))
+            setOpen(false)
+        } 
     }
 
     return (
@@ -67,6 +74,7 @@ function CreatePost() {
                     id="outlined-basic"
                     name="title"
                     value={post.title}
+                    error = {titleErr}
                     onChange={(e) => setPost({ ...post, title: e.target.value })}
                     label="Title"
                     variant="outlined"
@@ -93,6 +101,7 @@ function CreatePost() {
                     id="outlined-basic"
                     name="body"
                     value={post.body}
+                    error={bodyErr}
                     onChange={(e) => setPost({ ...post, body: e.target.value })}
                     label="Body"
                     variant="outlined"

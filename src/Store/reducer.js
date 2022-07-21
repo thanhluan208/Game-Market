@@ -10,13 +10,14 @@ import {
 
 const initState = {
     GameName: "Counter Strike:Global Offensive",
-    currentPage: "home",
     customer: {
         status: "nonActive",
         avatar: "",
         name: "",
         posts: [],
         title: "",
+        backgroundProfile:"",
+        subtitle:"",
     },
     cartItems: [],
 };

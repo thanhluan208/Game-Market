@@ -6,33 +6,37 @@ import { useStore, } from '../../Store'
 
 import "./User.css"
 
-import UserBG1 from "../../Images/User/BG.jpg"
-import UserBG2 from "../../Images/User/BG2.jpg"
-import UserBG3 from "../../Images/User/BG3.jpg"
+
 
 import Posts from "./UserPosts"
 import Games from "./UserGames"
 import Reviews from "./UserReview"
+import EditProfile from './EditProfile'
 
 
 
 function User() {
-  const [PostStat, setPostStat] = useState(0)
-  const [GameStat, setGameStat] = useState(0)
-  const [UpvoteStat, setUpvoteStat] = useState(0)
-  const [background, setBackground] = useState(UserBG3)
-  const [currentOption, setCurrentOption] = useState("Posts")
-
-
   const [state, ] = useStore()
   const customer = state.customer
 
+  const [PostStat,] = useState(customer.posts.length)
+  const [GameStat, setGameStat] = useState(0)
+  const [UpvoteStat, setUpvoteStat] = useState(0)
+  const [background,setBackground] = useState(customer.backgroundProfile)
+  const [currentOption, setCurrentOption] = useState("Posts")
+
+
+  
+
   const Options = ["Posts", "Games", "Reviews"]
   useEffect(() => {
-    setPostStat(Math.floor(Math.random() * 10))
     setGameStat(Math.floor(Math.random() * 10))
     setUpvoteStat(Math.floor(Math.random() * 4000 + 1000))
   }, [])
+
+  useEffect(() => {
+    setBackground(customer.backgroundProfile)
+  },[customer])
 
   return (
     <React.Fragment>
@@ -78,10 +82,10 @@ function User() {
             }
             )}
           </div>
-          <Button className='EditBtn'>Edit your profile</Button>
+          <EditProfile/>
         </Grid>
         <Grid item xs={10} className="UserContent">
-          <div className='UserGreeting'>Welcome , <span style={{color:"#3ec2ae"}}>{customer?.name}</span>       !</div>
+          <div className='UserGreeting'>Welcome , <span style={{color:"#3ec2ae"}}>{customer?.name}</span>!</div>
           {currentOption === "Posts" && <Posts totalPosts={PostStat}/>}
           {currentOption === "Games" && <Games />}
           {currentOption === "Reviews" && <Reviews />}

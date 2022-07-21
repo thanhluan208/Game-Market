@@ -6,8 +6,6 @@ import { useStore} from '../../Store'
 import { CreateNotification } from '../../Component/Notification'
 
 function Posts({posts,tag}) {
-    const tagState = ['one','two','three']
-
     const [currentPage,setCurrentPage] = useState(1)
     const [hasMore, setHasMore] = useState(true)
     const [Posts, setPosts] = useState([...posts])
@@ -39,12 +37,10 @@ function Posts({posts,tag}) {
     },[tag])
 
     useEffect(() => {
-        if(customer.posts.length > 0)
+        if(customer.posts.length > 0 && customer.posts[customer.posts.length - 1].tag === tag)
         {
-            CreateNotification("success","Post created successfully",'Create Post Success')
             setPosts(P => {
                 //concat new array with old array
-
                 return [customer.posts[customer.posts.length - 1],...P] // concat new post to old post
             })
         }
@@ -58,9 +54,9 @@ function Posts({posts,tag}) {
     return (
        <React.Fragment>
             {
-            Posts.length > 0 ? 
+            Posts.length > customer.posts.length ? 
                 <div className='postContainer'>
-                    {Posts.filter((post) =>  post.tag === tagState[tag - 1]).slice(0,currentPage*10).map((post, index) => {
+                    {Posts.slice(0,currentPage*10).map((post, index) => {
                         if( index === currentPage*10-1) {
                             return (
                                 <div key={index} className='postBox' ref={lastPost}>

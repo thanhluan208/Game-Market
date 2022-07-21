@@ -8,23 +8,29 @@ import CreatePost from './CreatePost'
 
 import { NotificationContainer } from "react-notifications";
 
+import { useStore } from "../../Store";
+
 
 import "./Blog.css";
 
 function Blog() {
   const [posts, setPosts] = useState([]);
-  const [isActive, setIsActive] = useState(1);
+  const [tag, setTag] = useState("one");
+  const [state,] = useStore()
+
+  const customerPost = state.customer.posts
 
   useEffect(() => {
+    setPosts([...customerPost.filter(obj => {return obj.tag === tag})])
     axios
-      .get("https://mockend.com/mockend/demo/posts")
+      .get(`https://mockend.com/mockend/demo/posts?tag_contains=${tag}&createdAt_order=asc`)
       .then((response) => {
-        setPosts(response.data);
+        setPosts(P => {return [...P,...response.data]});
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [])
+  }, [tag])
 
 
 
@@ -38,11 +44,11 @@ function Blog() {
           <CreatePost />
         </div>
         <div className="TopicBox">
-          <Button onClick={() => {setIsActive(1)}} className={isActive % 3 === 1 ? "Topic active" : "Topic"}>Topic A</Button>
-          <Button onClick={() => {setIsActive(2)}} className={isActive % 3 === 2 ? "Topic active" : "Topic"}>Topic B</Button>
-          <Button onClick={() => {setIsActive(3)}} className={isActive % 3 === 0 ? "Topic active" : "Topic"}>Topic C</Button>
+          <Button onClick={() => {setTag("one")}} className={tag === "one" ? "Topic active" : "Topic"}>Topic A</Button>
+          <Button onClick={() => {setTag("two")}} className={tag === "two" ? "Topic active" : "Topic"}>Topic B</Button>
+          <Button onClick={() => {setTag("three")}} className={tag === "three" ? "Topic active" : "Topic"}>Topic C</Button>
         </div>
-        <Posts posts={posts} tag = {isActive}/>
+        <Posts posts={posts} tag={tag}/>
       </Grid>
       <Grid item xs={2}></Grid>
     </Grid>

@@ -354,4 +354,5 @@
 }
 .css-m9glnp-MuiPaper-root-MuiDialog-paper {
     background-color: rgba(255,255,255,0.4) !important;
+    backdrop-filter: blur(100px);
 }
