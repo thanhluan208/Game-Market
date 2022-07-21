@@ -47,6 +47,7 @@ function SignIn({accountStatus}) {
       }
       else {
         dispatch(actions.setCustomer({...Customer,name:newCustomer.UserName}))
+        
         CreateNotification("success",`Welcome ${newCustomer.UserName.toUpperCase()}!, lets start your journey now!`,'Sign Up success',300)
       }
     }

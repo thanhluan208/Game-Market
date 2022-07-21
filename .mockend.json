@@ -32,10 +32,29 @@
         }
       },
       "author": {
-        "regexp": "[A-Z][a-z]{5,10}" 
+        "string" : [
+          "John Doe",
+          "Jane Doe",
+          "John Smith",
+          "Edith Cobb",
+          "Melanie Luna",
+          "Rudolph Fox",
+          "Darren Douglas",
+          "Derek Mccormick",
+          "Erik Mitchell",
+          "Dianne Newton",
+          "Maggie Wade",
+          "Eleanor Brady",
+          "Sheryl Mcgee",
+          "Kathryn Mcdonald",
+          "Katherine Mcdonald",
+          "Thanh Luan",
+          "Nguyen Van A",
+          "Nguyen Van B",
+          "Nguyen Van C",
+          "Nguyen Van D",
+          "Nguyen Van E"
+        ]
       }
-    },
-    "User": {
-      
     }
   }
