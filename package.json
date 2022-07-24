@@ -4,11 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "start" : "json-server --watch db.json",
-=======
-    "start" : "json-server --watch db.json --port https://gamessportal.herokuapp.com ",
->>>>>>> 0dc064c98c3e1d4db0e9a0a4af0db36828588f74
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
