@@ -12,24 +12,23 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 
-import { useStore,actions } from '../../Store'
+import { useStore } from '../../Store'
 
 import { CreateNotification } from "../../Component/Notification";
+import api from "../../api/api";
 
 function CreatePost() {
     const [open, setOpen] = useState(false);
     const [bodyErr, setBodyErr] = useState(false)
     const [titleErr,setTitleErr] = useState(false)
-    const [state, dispatch] = useStore()
+    const [state,] = useStore()
     const customer = state.customer
 
     const [post, setPost] = useState({
+        author: customer.UserName,
         body: "",
-        cover: "https://picsum.photos/seed/19787/1920/270",
-        id: 101,
-        isDraft: false,
-        tag: "one",
         createdAt: new Date().toISOString(),
+        tag: "one",
         title: "",
     });
 
@@ -42,16 +41,25 @@ function CreatePost() {
         setOpen(false);
     };
     const handleConfirm = () => {
-        if(customer.status !== "active") {
+        if(customer.UserName === undefined) {
             CreateNotification("error","Please sign in first",'Create Post failed')
             setOpen(false)
         }
+        
         if(post.body === "") {setBodyErr(true)} else {setBodyErr(false)}
         if(post.title === "") {setTitleErr(true)} else {setTitleErr(false)}
-        if(customer.status === "active" && post.body !== "" && post.title !== ""){
-            CreateNotification("success","Post created successfully",'Create Post Success')
-            dispatch(actions.addPost(post))
+        if(customer.UserName !== undefined && post.body !== "" && post.title !== ""){
+            api
+            .post(`/posts`, post)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            }
+            )
             setOpen(false)
+            CreateNotification("success","Post created successfully",'Create Post Success')
         } 
     }
 

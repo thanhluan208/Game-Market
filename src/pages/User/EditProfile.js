@@ -14,25 +14,30 @@ import UserBG2 from "../../Images/User/BG2.jpg";
 import UserBG3 from "../../Images/User/BG3.jpg";
 import { Box } from "@mui/material";
 
-import { useStore, actions } from "../../Store";
+import { useStore,actions } from "../../Store";
+import api from "../../api/api";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 function EditProfile() {
-  const [state, dispatch] = useStore();
+  const [state,dispatch] = useStore();
 
   const [open, setOpen] = useState(false);
   const [customer, setCustomer] = useState(state.customer);
-  const [newCustomerName, setNewCustomerName] = useState(customer.name);
+  const [newCustomerName, setNewCustomerName] = useState(customer.UserName);
   const [newCustomerTitle, setNewCustomerTitle] = useState(customer.title);
-  const [newCustomerSubtitle, setNewCustomerSubtitle] = useState(customer.subtitle);
-  const [newCustomerBackground, setNewCustomerBackground] = useState(customer.backgroundProfile);
-  
+  const [newCustomerSubtitle, setNewCustomerSubtitle] = useState(
+    customer.subtitle
+  );
+  const [newCustomerBackground, setNewCustomerBackground] = useState(
+    customer.backgroundProfile
+  );
+  const [newCustomerAvatar, setNewCustomerAvatar]= useState(customer.avatar);
+
   const listBG = [UserBG1, UserBG2, UserBG3];
 
-  console.log(newCustomerName, newCustomerTitle, newCustomerSubtitle,newCustomerBackground);
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -41,14 +46,42 @@ function EditProfile() {
     setOpen(false);
   };
 
-  const handleSubmit = () => {
-    dispatch(actions.setCustomer({ ...customer, name: newCustomerName,title: newCustomerTitle, subtitle:newCustomerSubtitle, backgroundProfile:newCustomerBackground }));
-    setOpen(false);
+  const handleInputChange = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        setNewCustomerAvatar(e.target.result);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  }
+
+  const makePatchRequets = (resource, userID) => {
+    api
+      .patch("/" + resource + "/" + userID, {
+        UserName: newCustomerName,
+        title: newCustomerTitle,
+        subtitle: newCustomerSubtitle,
+        backgroundProfile: newCustomerBackground,
+        avatar: newCustomerAvatar,
+      })
+      .then((res) => {
+        dispatch(actions.setCustomer(res.data));
+        handleClose();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
+  const handleSubmit = () => {
+    makePatchRequets("users", customer.id);
+  };
+
+
   useEffect(() => {
-    setCustomer(state.customer)
-  },[state])
+    setCustomer(state.customer);
+  }, [state]);
 
   return (
     <div>
@@ -56,7 +89,7 @@ function EditProfile() {
         Edit your profile
       </Button>
       <Dialog
-        maxWidth="10000px"
+        maxWidth="80vw"
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
@@ -95,7 +128,7 @@ function EditProfile() {
             label="Your new title"
             defaultValue={newCustomerTitle}
             variant="outlined"
-            onChange={e => setNewCustomerTitle(e.target.value)}
+            onChange={(e) => setNewCustomerTitle(e.target.value)}
           />
           <TextField
             id="outlined-multiline-static"
@@ -105,16 +138,32 @@ function EditProfile() {
             defaultValue={newCustomerSubtitle}
             className="editSubtitle"
             variant="outlined"
-            onChange={e => setNewCustomerSubtitle(e.target.value)}
+            onChange={(e) => setNewCustomerSubtitle(e.target.value)}
           />
           <div className="editBackgroundContainer">
+            <div className="editBackgroundTitle" style={{fontSize:"1.5rem"}}>Change your background</div>
             <div className="editBackgroundBox">
-              {listBG.map((bg,index) => {
-                return(
-                  <Button onClick={() => setNewCustomerBackground(bg)} className="editBackground" style={{background:`url(${bg})`}}></Button>
-                )
+              {listBG.map((bg, index) => {
+                return (
+                  <Button
+                    key={index}
+                    onClick={() => setNewCustomerBackground(bg)}
+                    className="editBackground"
+                    style={{ background: `url(${bg})` }}
+                  ></Button>
+                );
               })}
             </div>
+          </div>
+          <div className="editAvatarContainer">
+            <div className="editAvatarTitle">Change your avatar</div>
+            <label className="editAvatarBox" htmlFor="contained-button-file">
+              <input accept="image/*" id="contained-button-file" multiple type="file" onChange={(e) => handleInputChange(e)}/>
+              <Button className="uploadImg" variant="contained" component="span">
+                Upload
+              </Button>
+            </label>
+            {/* <img></img> */}
           </div>
         </Box>
       </Dialog>

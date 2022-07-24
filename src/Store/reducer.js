@@ -4,22 +4,17 @@ import {
     SET_CUSTOMER,
     REMOVE_CUSTOMER,
     SET_CART_ITEMS,
-    REMOVE_CART_ITEMS,
     ADD_POST,
+    REPLACE_CART_ITEMS,
 } from "./Constants";
 
 const initState = {
     GameName: "Counter Strike:Global Offensive",
     customer: {
-        status: "nonActive",
-        avatar: "",
-        name: "",
-        posts: [],
-        title: "",
-        backgroundProfile:"",
-        subtitle:"",
+    
     },
     cartItems: [],
+    update_profile: false
 };
 
 function reducer(state, action) {
@@ -54,7 +49,7 @@ function reducer(state, action) {
                 posts: [],
                 },
             };
-        case REMOVE_CART_ITEMS:
+        case REPLACE_CART_ITEMS:
             return {
                 ...state,
                 cartItems: action.payload,

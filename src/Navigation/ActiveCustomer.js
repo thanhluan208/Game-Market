@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 import { useStore, actions } from "../Store";
 
@@ -12,10 +12,11 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import LogoutIcon from '@mui/icons-material/Logout';
 
-function ActiveCustomer({ customer }) {
+function ActiveCustomer() {
   const [open, setOpen] = React.useState(false);
-  const [, dispatch] = useStore();
-
+  const [state, dispatch] = useStore();
+  const customer = state.customer
+  const navigate = useNavigate();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -26,17 +27,22 @@ function ActiveCustomer({ customer }) {
   };
 
   const logOut = () => {
+    localStorage.removeItem("user")
+    localStorage.removeItem("order")
     setOpen(false);
     dispatch(actions.removeCustomer());
-    dispatch(actions.removeCartItems([]));
+    dispatch(actions.replaceCartItems([]));
+    navigate("/");
   }
+
+  
 
 
   return (
     <div className="customer" >
       <Link onClick={ () => {dispatch(actions.setCurrentPage('admin'))}} to="/user" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <div className="customerAva" style={{ background: `url(${customer.avatar})` }}></div>
-        <span className="customerName">{customer.name}</span>
+        <span className="customerName">{customer.UserName}</span>
       </Link>
       <Button className="logOut" variant="outlined" onClick={handleClickOpen}> <LogoutIcon/> </Button>
       <Dialog

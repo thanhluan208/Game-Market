@@ -36,12 +36,12 @@ function TopGameDownloaded({gameList}) {
           <div key={index} className='topGameDownloaded'  onMouseEnter={() => {setTopGame(game)}}>
               <div className='topGameDownloadedImg' style={{background:`url(${useBackground[index]})`}}></div>
               <div className='topGameDownloadedInfo'>
-                <div className='topGameDownloadedTitle'>{game.name}</div>
-                <Rating value={game.star} readOnly/>
+                <div className='topGameDownloadedTitle'>{game?.name}</div>
+                <Rating value={game?.star} readOnly/>
               </div>
               <div className='topGameDownloadedAction'>
                 <FileDownloadIcon/>
-                {game.download}
+                {game?.download}
               </div>
           </div>
         ))}
@@ -51,7 +51,7 @@ function TopGameDownloaded({gameList}) {
         </div>
       </div>
       <div className='topGameDownloadedDetail'>
-          {topGame.name}
+          {topGame?.name}
       </div>
     </div>
   )

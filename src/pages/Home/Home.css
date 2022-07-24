@@ -80,6 +80,15 @@
     font-size:18px;
     display: unset;
 }
+
+.news:hover .title {
+    color: #000;
+}
+
+.news:hover .newsHeader .title div {
+    background: #000;
+}
+
 .newsHeader .date {
     margin-top: 5%;
 }
@@ -331,10 +340,7 @@
 .previewPlayBtn {
     width: 70%;
     height: 20%;
-    background: rgba(255,255,255, 20%);
-    box-shadow:0 15px 25px #3ec2ae;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    box-shadow:-6px -6px 12px rgb(255 255 255 / 37%), 6px 6px 12px rgb(62 194 174 / 90%) ;
     border-radius: 15px;
     display: flex;
     justify-content: center;

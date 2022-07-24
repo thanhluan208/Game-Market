@@ -1,0 +1,268 @@
+.boxContainer {
+    width: 800px;
+    height: 100%;
+    animation: rotate 20s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(0.5);
+    }
+    25% {
+        transform: rotate(360deg) scale(0.7);
+    }
+    50% {
+        transform: rotate(360deg) scale(1);
+    }
+    75% {
+        transform: rotate(360deg) scale(0.7);
+    }
+    100% {
+        transform: rotate(0deg) scale(0.5);
+    }
+}
+
+
+.bigBox {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    background: #fff;
+    margin-left: 50px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.box1  .box:nth-child(1) {
+    width: 282.84px;
+    height: 282.84px;
+    background: #000;
+    transform: rotate(45deg);
+    top: -70%;
+    position: absolute;
+    left: 29%;
+    background-image: linear-gradient(115deg, #9a9a9a,#818181,#484848, #000000);
+}
+
+.box1  .box:nth-child(2) {
+    width: 282.84px;
+    height: 282.84px;
+    background: #000;
+    transform: rotate(-45deg);
+    top: 29%;
+    position: absolute;
+    left: -72%;
+    background-image: linear-gradient(155deg, #9a9a9a,#818181,#484848, #000000);
+}
+
+.box2 {
+    background-image: linear-gradient(180deg,#666666,#383535, #000);
+}
+
+.box2 .box:nth-child(1) {
+    width: 207.15px;
+    height: 206.15px;
+    transform: rotate(75deg);
+    top: 12%;
+    left: -88%;
+    position: absolute;
+    background: #000;
+    background-image: linear-gradient(24deg,#4e4e4e 72%,#454444 84%, #000 100%);
+}
+
+.box2 .box:nth-child(2) {
+    width: 206.15px;
+    height: 206.15px;
+    transform: rotate(15deg);
+    top: 12%;
+    left: 85%;
+    position: absolute;
+    background: #000;
+    background-image: linear-gradient(246deg,#4e4e4e 72%,#454444 84%, #000 100%);
+}
+
+.box3 .box:nth-child(1) {
+    width: 282.84px;
+    height: 282.84px;
+    background: #000;
+    transform: rotate(-45deg);
+    top: -70%;
+    position: absolute;
+    left: -70%;
+    background-image: linear-gradient(230deg, #9a9a9a,#818181,#484848, #000000);
+}
+
+.box3 .box:nth-child(2) {
+    width: 282.84px;
+    height: 282.84px;
+    background: #000;
+    transform: rotate(-45deg);
+    top: 29%;
+    position: absolute;
+    left: 30%;
+    background-image: linear-gradient(322deg, #9a9a9a,#818181,#484848, #000000);
+}
+
+.box4 {
+    background-image: linear-gradient(90deg,#666666,#3a3a3a, #000);
+}
+
+.box4 .box:nth-child(1) {
+    width: 207.15px;
+    height: 206.15px;
+    transform: rotate(75deg);
+    top: 84%;
+    left: 11%;
+    position: absolute;
+    background: #000;
+    background-image: linear-gradient(297deg,#4e4e4e 72%,#454444 80%, #000 100%);
+}
+
+.box4 .box:nth-child(2) {
+    width: 206.15px;
+    height: 206.15px;
+    transform: rotate(15deg);
+    top: -88%;
+    left: 12%;
+    position: absolute;
+    background: #000;
+    background-image: linear-gradient(147deg,#4e4e4e 72%,#454444 84%, #000 100%);
+}
+
+.box5 .box:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    position: absolute;
+    transform: rotate(45deg);
+    top: -70%;
+    background-image: linear-gradient(120deg, #d2d2d2,#838383, #000000);
+}
+
+.box5 .box:nth-child(2) {
+    background-image: linear-gradient(75deg, #ffffff,#646464, #000000);
+    transform: rotate(45deg);
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    left: -70%;
+    position: absolute;
+}
+
+.box5 .box:nth-child(3) {
+    transform: rotate(45deg);
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    right: -70%;
+    position: absolute;
+    background-image: linear-gradient(219deg, #ffffff,#727070, #000000);
+}
+
+.box5 .box:nth-child(4) {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    bottom: -70%;
+    position: absolute;
+    transform: rotate(45deg);
+    background-image: linear-gradient(288deg, #9f9f9f,#464646, #000000);
+}
+
+.box6 {
+    background-image: linear-gradient(270deg,#575757,#282828, #000);
+}
+
+.box6 .box:nth-child(1) {
+    width: 206.15px;
+    height: 206.15px;
+    transform: rotate(15deg);
+    top: 84%;
+    left: -15%;
+    position: absolute;
+    background: #000;
+    background-image: linear-gradient(317deg,#4e4e4e 72%,#454444 79%, #000 100%);
+}
+
+.box6 .box:nth-child(2) {
+    width: 207.15px;
+    height: 206.15px;
+    transform: rotate(75deg);
+    top: -88%;
+    left: -16%;
+    position: absolute;
+    background: #000;
+    background-image: linear-gradient(120deg,#4e4e4e 72%,#454444 82%, #000 100%);
+}
+
+
+.box7  .box:nth-child(1) {
+    width: 282.84px;
+    height: 282.84px;
+    background: #000;
+    transform: rotate(45deg);
+    top: -70%;
+    position: absolute;
+    left: -70%;
+    background-image: linear-gradient(50deg, #9a9a9a,#818181,#484848, #000000);
+}
+
+.box7  .box:nth-child(2) {
+    width: 282.84px;
+    height: 282.84px;
+    background: #000;
+    transform: rotate(-45deg);
+    top: 29%;
+    position: absolute;
+    left: 30%;
+    background-image: linear-gradient(50deg, #9a9a9a,#818181,#484848, #000000);
+}
+
+.box8 {
+    background-image: linear-gradient(0deg,#555555,#2a2a2a, #000000)
+}
+
+.box8 .box:nth-child(1) {
+    width: 207.15px;
+    height: 206.15px;
+    transform: rotate(75deg);
+    top: -15%;
+    left: 84%;
+    position: absolute;
+    background: #000;
+    background-image: linear-gradient(230deg,#4e4e4e 47%,#454444 74%, #000 100%);
+}
+
+.box8 .box:nth-child(2) {
+    width: 206.15px;
+    height: 206.15px;
+    transform: rotate(15deg);
+    top: -15%;
+    left: -87%;
+    position: absolute;
+    background: #000;
+    background-image: linear-gradient(50deg,#4e4e4e 47%,#454444 74%, #000 100%);
+}
+
+.box9  .box:nth-child(1) {
+    width: 282.84px;
+    height: 282.84px;
+    background: #000;
+    transform: rotate(45deg);
+    top: -70%;
+    position: absolute;
+    left: 29%;
+    background-image: linear-gradient(213deg, #9a9a9a,#818181,#484848, #000000);
+}
+
+.box9  .box:nth-child(2) {
+    width: 282.84px;
+    height: 282.84px;
+    background: #000;
+    transform: rotate(-45deg);
+    top: 29%;
+    position: absolute;
+    left: -71%;
+    background-image: linear-gradient(66deg, #9a9a9a,#818181,#484848, #000000);
+}

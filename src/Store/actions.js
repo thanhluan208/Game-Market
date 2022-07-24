@@ -4,7 +4,7 @@ import {
     SET_CUSTOMER,
     REMOVE_CUSTOMER,
     SET_CART_ITEMS,
-    REMOVE_CART_ITEMS,
+    REPLACE_CART_ITEMS,
     ADD_POST,
 } from "./Constants";
 
@@ -29,11 +29,13 @@ export const setCartItems = (payload) => ({
   type: SET_CART_ITEMS,
   payload,
 });
-export const removeCartItems = (payload) => ({
-  type: REMOVE_CART_ITEMS,
+export const replaceCartItems = (payload) => ({
+  type: REPLACE_CART_ITEMS,
   payload,
 });
 export const addPost = (payload) => ({
     type: ADD_POST,
     payload,
 });
+
+  

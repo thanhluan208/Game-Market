@@ -1,16 +1,19 @@
 import { Grid } from '@mui/material'
 import React from 'react'
 
-function UserPosts({totalPosts}) {
+function UserPosts({posts}) {
   return (
-    <Grid container spacing={2}>
-        <Grid item xs={10}>
-                HELLO
-        </Grid>
-        <Grid item xs={2}>
+    <div>
+      {posts.map((post, index) => {
+        return (
+          <div key={index}>
+            <div>{post.title}</div>
+            <div>{post.content}</div>
+          </div>
 
-        </Grid>
-    </Grid>
+        ) 
+      })}
+    </div>
   )
 }
 

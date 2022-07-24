@@ -15,6 +15,8 @@ import Customer from './pages/Customer/Customer';
 import Admin from './pages/Admin/Admin'
 import User from './pages/User/User'
 
+import Box from './Component/Box';
+
 
 import 'react-notifications/lib/notifications.css';
 
@@ -26,9 +28,9 @@ function App() {
       <Routes>
         <Route path = "/" element = {<Home/>}/>
         <Route path = "/Shop" element = {<Shop/>}/>
-        <Route path = "/Blog" element = {<Blog/>}/>
-        <Route path = "/Review" element = {<Review/>}/>
-        <Route path = "/About" element = {<About/>}/>
+        <Route path = "/Blog" element = {<Box/>}/>
+        <Route path = "/Review" element = {<Box/>}/>
+        <Route path = "/About" element = {<Box/>}/>
         <Route path = "/product" element={<Product/>}/>
         <Route path = "/logIn" element={<LogIn/>}/>
         <Route path = "/customer" element={<Customer/>}/>

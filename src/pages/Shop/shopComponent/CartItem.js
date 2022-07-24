@@ -15,7 +15,7 @@ function CartItem({item}) {
 
     const removeItem = () => {
       currentCart.splice(currentCart[item.id], 1)
-      dispatch(actions.removeCartItems(currentCart))
+      dispatch(actions.replaceCartItems(currentCart))
     }
 
     return (
