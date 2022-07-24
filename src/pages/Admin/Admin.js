@@ -14,11 +14,16 @@ import Reviews from './Reviews'
 import News from './News'
 import { NotificationContainer } from 'react-notifications';
 
+
+import img from '../../Images/Customer/customerAva1.jpg'
+
 import "./Admin.css";
 
 function Admin() {
 
   const [activeTab, setActiveTab] = useState("accounts")
+  
+  console.log(img)
 
   return (
     <Grid container style={{height:"90vh"}}>

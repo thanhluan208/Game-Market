@@ -1,262 +1,273 @@
-.sidebarContainer {
-    position: relative;
-    padding: 0 2%;
-}
-
-.sidebarContainer .sidebarBox {
-    height: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-    position: relative;
-    margin: 5% 0;
-    background: transparent;
-    border-radius: 15px;
-    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
-        inset -5px -5px 15px rgba(255, 255, 255, 0.1),
-        5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
-}
-
-.sidebarContainer .open {}
-
-.sidebarContainer .sidebarBox .openBtn {
-    position: absolute;
-    top: 0%;
-    background: #000;
-    right: 0%;
-    border-radius: 50%;
-    min-width: unset;
-    min-height: unset;
-    width: 50px;
-    height: 50px;
-    display: none;
-}
-
-.sidebarContainer .sidebarBox .adminTab {
-    margin: 20px 10px;
-    padding: 10px 0;
-    color: #fff;
-    border-radius: 15px;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    text-transform: none !important;
-    display: flex;
-    justify-content: space-around;
-}
-
-.sidebarContainer .sidebarBox .adminTab:hover {
-    box-shadow: 0 -3px 3px rgba(255, 255, 255, 0.5), 0 3px 3px rgba(0, 0, 0, 0.3);
-}
-
-.sidebarContainer .sidebarBox .activeTab {
-    transition: all 1.5 cubic-bezier(0.445, 0.05, 0.55, 0.95);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
-    width: 120%;
-    transform: translateX(10%);
-    box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) !important;
-}
-
-.sidebarContainer .sidebarBox .adminTab .adminTabContent {
-    width: 50%;
-    display: none;
-    font-size: 15px;
-}
-
-.sidebarContainer .sidebarBox .adminTab .activeTabContent {
-    display: unset;
-}
-
-.Controller {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 10%;
-    margin: 2% 0;
-}
-
-.Controller .sortBy {
-    width: 15%;
-    animation: scretch 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes scretch {
-    from {
-        width: 0%;
-        opacity: 0;
+    .sidebarContainer {
+        position: relative;
+        padding: 0 2%;
     }
-
-    to {
+    
+    .sidebarContainer .sidebarBox {
+        height: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        position: relative;
+        margin: 5% 0;
+        background: transparent;
+        border-radius: 15px;
+        box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2),
+            inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+            5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1);
+    }
+    
+    .sidebarContainer .sidebarBox .openBtn {
+        position: absolute;
+        top: 0%;
+        background: #000;
+        right: 0%;
+        border-radius: 50%;
+        min-width: unset;
+        min-height: unset;
+        width: 50px;
+        height: 50px;
+        display: none;
+    }
+    
+    .sidebarContainer .sidebarBox .adminTab {
+        margin: 20px 10px;
+        padding: 10px 0;
+        color: #fff;
+        border-radius: 15px;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        text-transform: none !important;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .sidebarContainer .sidebarBox .adminTab:hover {
+        box-shadow: 0 -3px 3px rgba(255, 255, 255, 0.5), 0 3px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sidebarContainer .sidebarBox .activeTab {
+        transition: all 1.5 cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        width: 120%;
+        transform: translateX(10%);
+        box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) !important;
+    }
+    
+    .sidebarContainer .sidebarBox .adminTab .adminTabContent {
+        width: 50%;
+        display: none;
+        font-size: 15px;
+    }
+    
+    .sidebarContainer .sidebarBox .adminTab .activeTabContent {
+        display: unset;
+    }
+    
+    .Controller {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10%;
+        margin: 2% 0;
+    }
+    
+    .Controller .sortBy {
         width: 15%;
-        opacity: 1;
+        animation: scretch 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-}
-
-.Controller .sortBy div {
-    color: #fff;
-    box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) ;
-    border-radius: 15px;
-}
-
-fieldset {
-    border: none !important;
-}
-
-label {
-    font-weight: 600 !important;
-    color: #fff !important;
-}
-
-input {
-    color: #fff !important;
-}
-
-.Controller .pagination {
-    width: 40%;
-    margin: 0 !important;
-    font-size: 20px;
-    box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) ;
-    animation: expand 2s cubic-bezier(0.2, 0.4, 0.8, 1);
-    display: flex;
-    height: 100%;
-    position: relative;
-}
-
-.pageUp, .pageDown, .pageContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff !important;
-    height: 100%;
-}
-
-.pageDown {
-    position: absolute !important;
-    left: 0;
-}
-.pageUp {
-    position: absolute !important;
-    right: 0;
-}
-
-.pageDown, .pageUp {
-    width: 20% !important;
-}
-.pageContent {
-    width: 100%;
-}
-
-@keyframes expand {
-    from {
-        width: 0;
-        opacity: 0;
+    
+    @keyframes scretch {
+        from {
+            width: 0%;
+            opacity: 0;
+        }
+    
+        to {
+            width: 15%;
+            opacity: 1;
+        }
     }
-
-    to {
+    
+    .Controller .sortBy div {
+        color: #fff;
+        box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) ;
+        border-radius: 15px;
+    }
+    
+    .Controller .sortBy fieldset, .Controller .searchBox  fieldset {
+        border: none !important;
+    }
+    
+    
+    .Controller .sortBy input,label, .Controller .searchBox input,label {
+        color: #fff !important;
+        font-weight: 600 !important;
+    }
+    
+    .Controller .pagination {
         width: 40%;
-        opacity: 1;
+        margin: 0 !important;
+        font-size: 20px;
+        box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) ;
+        animation: expand 2.5s cubic-bezier(0.2, 0.4, 0.8, 1.5);
+        display: flex;
+        height: 100%;
+        position: relative;
     }
-}
-
-.Controller .searchBox {
-    width: 25%;
-    animation: scretch2 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    height: 55px;
-}
-
-@keyframes scretch2 {
-    from {
-        width: 0%;
-        opacity: 0;
+    
+    .pageUp, .pageDown, .pageContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff !important;
+        height: 100%;
     }
-
-    to {
+    
+    .pageDown {
+        position: absolute !important;
+        left: 0;
+    }
+    .pageUp {
+        position: absolute !important;
+        right: 0;
+    }
+    
+    .pageDown, .pageUp {
+        width: 20% !important;
+    }
+    .pageContent {
+        width: 100%;
+    }
+    
+    @keyframes expand {
+        from {
+            width: 0;
+            opacity: 0;
+        }
+    
+        to {
+            width: 40%;
+            opacity: 1;
+        }
+    }
+    
+    .Controller .searchBox {
         width: 25%;
-        opacity: 1;
+        animation: scretch2 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 55px;
     }
-}
-
-.Controller .searchBox div {
-    color: #fff;
-    box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) ;
-    border-radius: 15px;
-}
-
-.AccountsList {
-    height: 5%;
-    margin-top: 5%;
-    color: #fff;
-    font-size: 20px;
-}
-
-.AccountsList .listHeader {
-    border-right: solid .5px #fff;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-}
-
-.AccountsList .listHeader:nth-last-child(1) {
-    border-right: 0;
-}
-
-.account {
-    height: 8%;
-    margin: 2% 0 ;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-
-
-.selected {
-    box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) ;
-    border-radius: 15px;
-}
-
-.account .accountInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 20px;
-}
-
-.account .listUlti {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.account .listUlti .accountUpdate {
-    color: #fff !important;
-}
-
-.account .listUlti .accountDelete {
-    color: rgb(248, 37, 37) !important;
-}
-
-.modalAlert {
-    width: 20%;
-    height: 20%;
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    color: #fff;
-    display: unset;
-    box-shadow: 0 15px 25px rgb(0 0 0 / 50%);
-    animation: appear 1s cubic-bezier(0.01, 0.885, 0.32,1.99);
-}
-
-@keyframes appear {
-    0% {
-        width: 0;
-        left: 50%;
-        opacity: 0;
+    
+    @keyframes scretch2 {
+        from {
+            width: 0%;
+            opacity: 0;
+        }
+    
+        to {
+            width: 25%;
+            opacity: 1;
+        }
     }
-    100% {
+    
+    .Controller .searchBox div {
+        color: #fff;
+        box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) ;
+        border-radius: 15px;
+    }
+    
+    .AccountsList {
+        height: 5%;
+        margin-top: 5%;
+        color: #fff;
+        font-size: 20px;
+    }
+    
+    .AccountsList .listHeader {
+        border-right: solid .5px #fff;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .AccountsList .listHeader:nth-last-child(1) {
+        border-right: 0;
+    }
+    
+    .account {
+        height: 8%;
+        margin: 2% 0 ;
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    
+    
+    
+    .selected {
+        box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174) ;
+        border-radius: 15px;
+    }
+    
+    .account .accountInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 20px;
+    }
+    
+    .account .listUlti {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .account .listUlti .accountUpdate {
+        color: #fff !important;
+    }
+    
+    .account .listUlti .accountDelete {
+        color: rgb(248, 37, 37) !important;
+    }
+    
+    .modalAlert {
         width: 20%;
+        height: 20%;
+        position: absolute;
+        top: 40%;
         left: 40%;
-        opacity: 1;
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        color: #fff;
+        display: unset;
+        box-shadow: 0 15px 25px rgb(0 0 0 / 50%);
+        animation: appear 1s cubic-bezier(0.01, 0.885, 0.32,1.99);
+    }
+    
+    @keyframes appear {
+        0% {
+            width: 0;
+            left: 50%;
+            opacity: 0;
+        }
+        100% {
+            width: 20%;
+            left: 40%;
+            opacity: 1;
+        }
+    }
+    
+
+/* media break point */
+
+@media only screen and (max-width: 1080px) {
+    .AccountsList .listHeader, .account .accountInfo {
+        font-size: 16px;
+    }
+    .account .listUlti .accountUpdate {
+        font-size: 10px;
+    }
+
+    .sidebarContainer .sidebarBox {
+        width: 60%;
     }
 }

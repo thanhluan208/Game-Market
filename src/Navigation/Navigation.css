@@ -89,3 +89,46 @@ a {
     text-decoration: none;
     color: #fff;
 }
+
+
+@media only screen and (max-width: 1080px) {
+    .brandName {
+        font-size: 20px;
+    }
+    .customer {
+        font-size: 15px;
+        padding: 1%;
+    }
+    .customer .logOut {
+        width: 15%;
+    }
+}
+
+@media only screen and (max-width: 993px) {
+    .customer .customerAva {
+        width: 35px;
+        height: 35px;
+        margin: 0;
+    }
+    .customer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        font-size: 10px;
+    } 
+    .customer .logOut {
+        position: relative !important;
+    width: 20%;
+    }
+
+    .customerName {
+        width: 65%; 
+        font-size: 15px;
+    }
+    .tabContainer .tab {
+        padding: 25px 15px;
+        font-size: 15px;
+    }
+}

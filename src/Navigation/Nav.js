@@ -55,11 +55,11 @@ function Nav() {
         </Grid>
         <Grid item xs={2} className="logContainer">
           {currentCustomer?.UserName === undefined ? 
-            <Link onClick={() => setCurrentPage("")}  className='logIn' to="/logIn">
+            <Link onClick={() => setCurrentPage("login")}  className='logIn' to="/logIn">
               Log In/Sign Up
             </Link> 
             : 
-            <ActiveCustomer />
+            <ActiveCustomer/>
           }
         </Grid>
     </Grid>

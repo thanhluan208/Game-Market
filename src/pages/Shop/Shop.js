@@ -21,6 +21,8 @@ import "./Shop.css";
 import { NotificationContainer } from "react-notifications";
 import { CreateNotification } from "../../Component/Notification";
 
+
+
 function Shop() {
   const [total, setTotal] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,6 +34,7 @@ function Shop() {
   const [cartItem, setCartItem] = useState(state.cartItems);
 
   const currentCustomer = state.customer;
+
 
 
   useEffect(() => {
@@ -62,7 +65,7 @@ function Shop() {
     if (currentCustomer.id !== undefined && state.cartItems.length === 0) {
       console.log(state.cartItems.length)
       api
-        .get("/gamesOrder?customerId=" + currentCustomer.id)
+        .get("/gamesOrder?UserName=" + currentCustomer.UserName)
         .then((res) => {
           if (res.data.length > 0) {
             setBuyedGames(res.data);
@@ -106,8 +109,8 @@ function Shop() {
     <React.Fragment>
       <NotificationContainer />
       <Grid container className="shopContainer">
-        <Grid item xs={2}></Grid>
-        <Grid item xs={8} className="poplarGameContainer">
+        <Grid item xs={1}></Grid>
+        <Grid item xs={10} className="poplarGameContainer">
           <div className="popularGameTitle">
             <div className="title">Popular game</div>
             <div className="more">View more</div>
@@ -153,7 +156,7 @@ function Shop() {
             <TopGameDownloaded gameList={popularGame} />
           </div>
         </Grid>
-        <Grid item xs={2}></Grid>
+        <Grid item xs={1}></Grid>
       </Grid>
       <div className="gameSlide">
         <div className="title">Recommend for you</div>

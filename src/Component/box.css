@@ -266,3 +266,113 @@
     left: -71%;
     background-image: linear-gradient(66deg, #9a9a9a,#818181,#484848, #000000);
 }
+
+@media only screen and (max-width:750px) {
+    .bigBox {
+        width: 180px;
+        height: 180px;
+        margin-left: 20px;
+    }
+    .box1 .box, .box3 .box, .box7 .box, .box9 .box {
+        width: 254.56px !important;
+        height: 254.56px !important;
+    }
+    .box5 .box {
+        width: 180px !important;
+        height: 180px !important;
+    }
+    .box2 .box, .box4 .box, .box6 .box, .box8 .box {
+        width: 185.54px !important;
+        height: 185.54px !important;
+    }
+}
+
+@media only screen and (max-width:602px) {
+    .bigBox, .box5 .box {
+        width: 160px !important;
+        height: 160px !important;
+    }
+    .box1 .box, .box3 .box, .box7 .box, .box9 .box {
+        width: 226.27px !important;
+        height: 226.27px !important;
+    }
+    .box2 .box, .box4 .box, .box6 .box, .box8 .box {
+        width: 164.92px !important;
+        height: 164.92px !important;
+    }
+    .superBox {
+        margin-top: 5%;
+    }
+}
+
+@media only screen and (max-width:540px) {
+    .bigBox, .box5 .box {
+        width: 120px !important;
+        height: 120px !important;
+    }
+    .box1 .box, .box3 .box, .box7 .box, .box9 .box {
+        width: 170px !important;
+        height: 170px !important;
+    }
+    .box2 .box, .box4 .box, .box6 .box, .box8 .box {
+        width: 123.693px !important;
+        height: 123.693px !important;
+    }
+    .superBox {
+        margin-top: 15%;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    .bigBox, .box5 .box {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    .box1 .box, .box3 .box, .box7 .box, .box9 .box {
+        width: 141.42px !important;
+        height: 141.42px !important;
+    }
+    .box2 .box, .box4 .box, .box6 .box, .box8 .box {
+        width: 103.1px !important;
+        height: 103.1px !important;
+    }
+    .superBox {
+        margin-top: 15%;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .bigBox, .box5 .box {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    .box1 .box, .box3 .box, .box7 .box, .box9 .box {
+        width: 114px !important;
+        height: 114px !important;
+    }
+    .box2 .box, .box4 .box, .box6 .box, .box8 .box {
+        width: 82.46px !important;
+        height: 82.46px !important;
+    }
+    .superBox {
+        margin-top: 15%;
+    }
+}
+
+@media only screen and (min-width:1500px) {
+    .boxContainer {
+        width: 1000px;
+    }
+    .bigBox, .box5 .box {
+        width: 240px !important;
+        height: 240px !important;
+    }
+    .box1 .box, .box3 .box, .box7 .box, .box9 .box {
+        width: 339.41px !important;
+        height: 339.41px !important;
+    }
+    .box2 .box, .box4 .box, .box6 .box, .box8 .box {
+        width: 247.39px !important;
+        height: 247.39px !important;
+    }
+}

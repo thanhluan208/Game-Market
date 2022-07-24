@@ -8,11 +8,22 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import { CreateNotification } from "../../../Component/Notification";
 
+
+import item1 from "../../../Images/Shop/item1.jpg";
+import item2 from "../../../Images/Shop/item2.jpg";
+import item3 from "../../../Images/Shop/item3.jpg";
+import item4 from "../../../Images/Shop/item4.jpg";
+import item5 from "../../../Images/Shop/item5.jpg";
+import item6 from "../../../Images/Shop/item6.jpg";
+import item7 from "../../../Images/Shop/item7.jpg";
+import item8 from "../../../Images/Shop/item8.jpg";
+
 function PopularGame({ game, buyedGames }) {
   const [state, dispatch] = useStore();
 
   const currentCustomer = state.customer;
   const currentCart = state.cartItems;
+
 
 
   const addToCart = (item) => {

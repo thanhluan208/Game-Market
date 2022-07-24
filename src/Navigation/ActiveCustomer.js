@@ -39,7 +39,7 @@ function ActiveCustomer() {
 
 
   return (
-    <div className="customer" >
+    <div className="customer" onClick={() => localStorage.setItem("page",JSON.stringify("user"))}>
       <Link onClick={ () => {dispatch(actions.setCurrentPage('admin'))}} to="/user" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
         <div className="customerAva" style={{ background: `url(${customer.avatar})` }}></div>
         <span className="customerName">{customer.UserName}</span>

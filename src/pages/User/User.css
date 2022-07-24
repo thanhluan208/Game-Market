@@ -238,3 +238,41 @@
   left: 0;
   width: 97px !important; 
 }
+
+
+@media only screen and (max-width:1080px) {
+  .UserContainer .UserInfo .UserAvatar {
+    height: 100px;
+  }
+  .UserContainer .UserInfo .UserName {
+    font-size: 23px;
+  }
+  .UserContainer .UserInfo .UserStatBox .Stat div, .UserContainer .UserInfo .optionBox .currentOption {
+    font-size: 12px;
+  }
+  .UserContainer .UserInfo .EditBtn {
+    font-size: 13px;
+    padding: 2% 0;
+  }
+  .leftBtn, .rightBtn {
+    height: 76%;
+  }
+  .UserContent .UserGreeting {
+    height: 15%;
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width:993px) {
+  
+  .leftBtn, .rightBtn {
+    height: 67%;
+    width: 20%;
+  }
+  .leftBtn {
+    left: -11%;
+  }
+  .rightBtn {
+    right: -11%;
+  }
+}

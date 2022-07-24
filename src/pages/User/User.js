@@ -7,7 +7,6 @@ import api from "../../api/api";
 
 import "./User.css";
 
-
 import Posts from "./UserPosts";
 import Games from "./UserGames";
 import Reviews from "./UserReview";
@@ -15,7 +14,9 @@ import EditProfile from "./EditProfile";
 
 function User() {
   const [state] = useStore();
-  const [customer, setCustomer] = useState(state.customer);
+  const [customer, setCustomer] = useState(
+    JSON.parse(localStorage.getItem("user"))
+  );
   const [posts, setPosts] = useState([]);
   const [UpvoteStat, setUpvoteStat] = useState(0);
   const [currentOption, setCurrentOption] = useState("Posts");
@@ -37,7 +38,8 @@ function User() {
   }, [state.customer]);
 
   useEffect(() => {
-    api
+    if(customer !== null) {
+      api
       .get(`/posts?author=${customer.UserName}`)
       .then((response) => {
         setPosts(response.data);
@@ -45,84 +47,94 @@ function User() {
       .catch((error) => {
         console.log(error);
       });
+    }
   }, []);
+
+  console.log(customer)
 
   return (
     <React.Fragment>
-      <div
-        className="UserBG"
-        style={{ backgroundImage: `url(${customer.backgroundProfile})` }}
-      ></div>
-      <Grid container className="UserContainer">
-        <Grid item xs={2} className="UserInfo">
+      
+      {customer !== null ? (
+        <React.Fragment>
           <div
-            className="UserAvatar"
-            style={{ background: `url(${customer.avatar})` }}
+            className="UserBG"
+            style={{ backgroundImage: `url(${customer.backgroundProfile})` }}
           ></div>
-          <div className="UserName">{customer.UserName}</div>
-          <div className="UserTitle">{customer.title}</div>
-          <div className="UserStatBox">
-            <div className="Stat">
-              {customer.UserName !== undefined ? (
-                <React.Fragment>
-                  {posts.length}
-                  <div>{posts.length > 1 ? "Posts" : "Post"}</div>
-                </React.Fragment>
-              ) : null}
-            </div>
-            <div className="Stat">
-              {customer.UserName !== undefined ? (
-                <React.Fragment>
-                  {customer.games.length}
-                  <div>{customer.games.length > 1 ? "Games" : "Game"}</div>
-                </React.Fragment>
-              ) : null}
-            </div>
-            <div className="Stat">
-              {UpvoteStat}
-              <div>Upvotes</div>
-            </div>
-          </div>
-          <hr></hr>
-          <div className="optionBox">
-            {Options.map((option) => {
-              if (currentOption === option) {
-                return (
-                  <Button
-                    className="optionBtn currentOption"
-                    key={option}
-                    onClick={() => setCurrentOption(option)}
-                  >
-                    <div className="leftBtn"></div>
-                    {option}
-                    <div className="rightBtn"></div>
-                  </Button>
-                );
-              } else {
-                return (
-                  <Button
-                    className="optionBtn"
-                    key={option}
-                    onClick={() => setCurrentOption(option)}
-                  >
-                    {option}
-                  </Button>
-                );
-              }
-            })}
-          </div>
-          <EditProfile />
-        </Grid>
-        <Grid item xs={10} className="UserContent">
-          <div className="UserGreeting">
-            Welcome,
-            <span style={{ color: "#3ec2ae" }}> {customer?.UserName} </span>!
-          </div>
-          {currentOption === "Posts" && <Posts posts={posts} />}
-          {currentOption === "Games" && <Games />}
-          {currentOption === "Reviews" && <Reviews />}
-        </Grid>
-      </Grid>
+          <Grid container className="UserContainer">
+            <Grid item xs={2} className="UserInfo">
+              <div
+                className="UserAvatar"
+                style={{ background: `url(${customer.avatar})` }}
+              ></div>
+              <div className="UserName">{customer.UserName}</div>
+              <div className="UserTitle">{customer.title}</div>
+              <div className="UserStatBox">
+                <div className="Stat">
+                  {customer.UserName !== undefined ? (
+                    <React.Fragment>
+                      {posts.length}
+                      <div>{posts.length > 1 ? "Posts" : "Post"}</div>
+                    </React.Fragment>
+                  ) : null}
+                </div>
+                <div className="Stat">
+                  {customer.UserName !== undefined ? (
+                    <React.Fragment>
+                      {customer.games.length}
+                      <div>{customer.games.length > 1 ? "Games" : "Game"}</div>
+                    </React.Fragment>
+                  ) : null}
+                </div>
+                <div className="Stat">
+                  {UpvoteStat}
+                  <div>Upvotes</div>
+                </div>
+              </div>
+              <hr></hr>
+              <div className="optionBox">
+                {Options.map((option) => {
+                  if (currentOption === option) {
+                    return (
+                      <Button
+                        className="optionBtn currentOption"
+                        key={option}
+                        onClick={() => setCurrentOption(option)}
+                      >
+                        <div className="leftBtn"></div>
+                        {option}
+                        <div className="rightBtn"></div>
+                      </Button>
+                    );
+                  } else {
+                    return (
+                      <Button
+                        className="optionBtn"
+                        key={option}
+                        onClick={() => setCurrentOption(option)}
+                      >
+                        {option}
+                      </Button>
+                    );
+                  }
+                })}
+              </div>
+              <EditProfile />
+            </Grid>
+            <Grid item xs={10} className="UserContent">
+              <div className="UserGreeting">
+                Welcome,
+                <span style={{ color: "#3ec2ae" }}> {customer?.UserName} </span>!
+              </div>
+              {currentOption === "Posts" && <Posts posts={posts} />}
+              {currentOption === "Games" && <Games />}
+              {currentOption === "Reviews" && <Reviews />}
+            </Grid>
+          </Grid>
+        </React.Fragment>
+      ) : (
+        <></>
+      )}
     </React.Fragment>
   );
 }

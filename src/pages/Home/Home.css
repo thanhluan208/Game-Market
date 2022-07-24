@@ -362,3 +362,47 @@
     background-color: rgba(255,255,255,0.4) !important;
     backdrop-filter: blur(100px);
 }
+
+
+@media only screen and (max-width:1080px) {
+    .homeNews .header h1 {
+        font-size: 24px;
+    }
+    .newsHeader .title {
+        font-size: 16px;
+    }
+    .homeNews {
+        padding-right: 4%;
+    }
+    .topGameContent .gameBox .topGame {
+        height: 70%;
+    }
+    .topGameContent .gameBox .nameGame {
+        height: 30%;
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width:993px) {
+    .homeContainer {
+        display: block;
+    }
+    .subContainerLeft, .subContainerRight {
+        width: 100%;
+        display: inline-block;
+    }
+    .homeNews .header {
+        width: 40%;
+        margin: 5%;
+    }
+    .homeNews .header h1 {
+        font-size: 38px;
+    }
+    .news {
+        margin: 2%;
+        display: inline-block;
+        width: 40%;
+        height: 100px;
+        overflow: hidden;
+    }
+}

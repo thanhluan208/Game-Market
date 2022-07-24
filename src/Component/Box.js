@@ -6,7 +6,7 @@ import './box.css'
 
 function Box() {
   return (
-    <div style={{overflow:"hidden",display:"flex",justifyContent:"center"}}>
+    <div className='superBox' style={{overflow:"hidden",display:"flex",justifyContent:"center"}}>
       <div className="boxContainer">
         <div className='bigBox box1'>
           <div className='box'></div>
