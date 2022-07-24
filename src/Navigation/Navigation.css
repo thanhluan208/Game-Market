@@ -1,134 +1,271 @@
 /* navigation */
 #Brand {
-    color: #3ec2ae;
+  color: #3ec2ae;
 }
-
 
 .logContainer {
-    display: flex;
-    justify-content: right;
-    padding: 1% ;
-    height: 100%;
+  display: flex;
+  justify-content: right;
+  padding: 1%;
+  height: 100%;
 }
 
-.logContainer  .logIn {
-    background-color: #7cffcb !important;
-    background-image: linear-gradient(242deg, #3ec2ae 0%, #70d7c7 100%);
-    backdrop-filter: blur(10px);
-    color: #fff !important;
-    border-radius: 15px !important;
-    padding: 2% 10% !important;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    text-decoration: none;
+.logContainer .logIn {
+  background-color: #7cffcb !important;
+  background-image: linear-gradient(242deg, #3ec2ae 0%, #70d7c7 100%);
+  backdrop-filter: blur(10px);
+  color: #fff !important;
+  border-radius: 15px !important;
+  padding: 2% 10% !important;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
 }
 
 .pageActive {
-    color: #3ec2ae !important;
+  color: #3ec2ae !important;
 }
 
 .customer {
-    background: rgba(255,255,255,0.4) !important;
-    backdrop-filter: blur(10px);
-    color: #fff !important;
-    border-radius: 15px !important;
-    padding: 2% 5% !important;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    text-decoration: none;
-    position: relative;
-    width: 100%;
+  background: rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(10px);
+  color: #fff !important;
+  border-radius: 15px !important;
+  padding: 2% 5% !important;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
 }
 
 .customer .customerAva {
-    height: 40px;
-    width: 40px;
-    background-size: cover !important;
-    border-radius: 50%;
-    margin-right: 10px;
+  height: 40px;
+  width: 40px;
+  background-size: cover !important;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 .customer .logOut {
-    position: absolute !important;
-    right: 0;
-    top: 0;
-    height: 100%;
-    border: none !important;
-    margin: 0;
-    padding: 0;
-    display: flex !important;
-    justify-content: center !important;
-    width: 30%;
-    min-width: unset;
-    color: #fff !important;
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border: none !important;
+  margin: 0;
+  padding: 0;
+  display: flex !important;
+  justify-content: center !important;
+  width: 30%;
+  min-width: unset;
+  color: #fff !important;
 }
 
 .brandName {
-    text-align: left;
-    font-size: 30px;
-    padding: 20px;
-    color: #fff;
-    height: 100%;
+  text-align: left;
+  font-size: 30px;
+  padding: 20px;
+  color: #fff;
+  height: 100%;
 }
 
 a {
-    text-decoration: none;
-    color: #fff !important;
+  text-decoration: none;
+  color: #fff !important;
 }
 
 .tabContainer {
-    height: 100%;
+  height: 100%;
 }
 
 .tabContainer .tab {
-    display: inline-block;
-    padding: 20px;
-    font-size: 20px;
-    text-decoration: none;
-    color: #fff;
+  display: inline-block;
+  padding: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+}
+.phoneMode {
+  display: none;
 }
 
-
+@media only screen and (max-width: 1200px) {
+  .customer {
+    padding: 1% !important;
+  }
+  .customer .customerAva {
+    margin: 0;
+  }
+  .customer .logOut {
+    position: relative !important;
+    width: 25%;
+  }
+}
 @media only screen and (max-width: 1080px) {
-    .brandName {
-        font-size: 20px;
-    }
-    .customer {
-        font-size: 15px;
-        padding: 1%;
-    }
-    .customer .logOut {
-        width: 15%;
-    }
+  .brandName {
+    font-size: 20px;
+  }
+  .customer {
+    font-size: 15px;
+    padding: 1%;
+  }
+  .customer .logOut {
+    width: 15%;
+  }
 }
 
 @media only screen and (max-width: 993px) {
-    .customer .customerAva {
-        width: 35px;
-        height: 35px;
-        margin: 0;
-    }
-    .customer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        font-size: 10px;
-    } 
-    .customer .logOut {
-        position: relative !important;
+  .customer .customerAva {
+    width: 35px;
+    height: 35px;
+    margin: 0;
+  }
+  .customer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 10px;
+  }
+  .customer .logOut {
+    position: relative !important;
     width: 20%;
-    }
+  }
 
-    .customerName {
-        width: 65%; 
-        font-size: 15px;
-    }
-    .tabContainer .tab {
-        padding: 25px 15px;
-        font-size: 15px;
-    }
+  .customerName {
+    width: 65%;
+    font-size: 15px;
+  }
+  .tabContainer .tab {
+    padding: 25px 15px;
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .customerName {
+    display: none;
+  }
+  .customer {
+    padding: 0 !important;
+  }
+  .customer a {
+    width: 75%;
+  }
+  .customer button {
+    width: 25%;
+  }
+  .customer .customerAva {
+    width: 45px;
+    height: 45px;
+  }
+  .tabContainer {
+    display: none;
+  }
+  .logContainer {
+    position: absolute;
+    right: 2%;
+    width: 30%;
+  }
+
+  .phoneMode {
+    position: fixed;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    z-index: 10000000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .phoneNavOpen,
+  .phoneNavClose {
+    display: grid !important;
+    width: 60px;
+    height: 50px;
+  }
+  .phoneNavOpen div {
+    width: 40px;
+    height: 5px;
+    background: #fff;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.575);
+  }
+
+  .phoneNavClose div {
+    background: #fff;
+    height: 5px;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.575);
+  }
+  .phoneNavClose div:nth-child(1) {
+    position: absolute;
+    top: 45%;
+    transform: rotate(45deg);
+    left: 6%;
+    width: 55px;
+  }
+
+  .phoneNavClose div:nth-child(2) {
+    width: 0;
+  }
+  .phoneNavClose div:nth-child(3) {
+    position: absolute;
+    top: 45%;
+    transform: rotate(135deg);
+    right: 6%;
+    width: 55px;
+  }
+
+  .tabOpen,
+  .tabClose {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    box-shadow:-3px -3px 6px rgb(255 255 255 / 70%),
+                3px 3px 6px rgb(62 194 174 / 90%),
+                0 15px 25px rgb(255 255 255 / 90%);
+  }
+  .tabClose {
+    top: 10%;
+    left: 45%;
+    opacity: 0;
+    z-index: -5;
+    transition: all 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  .tabOpen:nth-child(2) {
+    left: 20%;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.575);
+  }
+  .tabOpen:nth-child(3) {
+    left: 30%;
+    top: -75%;
+    transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  }
+  .tabOpen:nth-child(4) {
+    top: -130%;
+    transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+  .tabOpen:nth-child(5) {
+    left: 60%;
+    top: -75%;
+    transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+  }
+  .tabOpen:nth-child(6) {
+    left: 70%;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.575);
+  }
+  #pageActive {
+    color: #3ec2ae !important;
+  }
 }

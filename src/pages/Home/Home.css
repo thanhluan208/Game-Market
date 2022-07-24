@@ -363,6 +363,14 @@
     backdrop-filter: blur(100px);
 }
 
+@media only screen and (max-width:1200px) {
+    .homeNews .header h1 {
+        font-size: 25px;
+    }
+    .newsHeader .title {
+        font-size: 15px;
+    }
+}
 
 @media only screen and (max-width:1080px) {
     .homeNews .header h1 {
@@ -396,7 +404,7 @@
         margin: 5%;
     }
     .homeNews .header h1 {
-        font-size: 38px;
+        font-size: 30px;
     }
     .news {
         margin: 2%;
@@ -404,5 +412,35 @@
         width: 40%;
         height: 100px;
         overflow: hidden;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .homeNews {
+        margin-bottom: 10%;
+    }
+    .previewBox .previewTitle {
+        font-size: 30px;
+    }
+    .previewBox .addToCart {
+        width: 80%;
+    }
+    .topGameContent {
+        height: 55%;
+    }
+    .topGameContent .gameBox .topGame {
+        height: 65%;
+    }
+    .topGameContent .gameBox .nameGame {
+        height: 35%;
+    }
+    .homeNews .header h1 {
+        font-size: 24px;
+    }
+    .news {
+        height: 70px;
+    }
+    .newsHeader .title {
+        font-size: 13px;
     }
 }
