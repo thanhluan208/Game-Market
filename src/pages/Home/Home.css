@@ -444,3 +444,72 @@
         font-size: 13px;
     }
 }
+
+@media only screen and (max-width:600px) {
+    .subContainerRight {
+        margin-top: 20%;
+        margin-bottom: 15%;
+    }
+    .previewBox .previewTitle {
+        font-size: 22px ;
+      } 
+      .previewBox .span {
+        margin-top: 45% ;
+      }
+      .topGameHeader .header {
+        font-size: 20px ;
+      }
+      .topGameContent {
+        margin-top: 15%;
+        display: unset;
+      }
+      .topGameContent .gameBox {
+        display: inline-block;
+        width: 70%;
+        margin: 10% 0;
+      } 
+      .topGameContent .gameBox:hover {
+        padding-left: 15%;
+      }
+      .homeNews .header {
+        width: 60%;
+      }
+      .homeNews .header h1{
+        font-size: 30px;
+      }
+      .news {
+        width: 70%;
+        height: 100px;
+      }
+}
+
+@media only screen and (max-width:400px) {
+    .topGameContent .gameBox {
+        height: 70%;
+      } 
+    .previewBox .span {
+        margin-top: 60%;
+    }
+    .previewBox .previewTitle {
+        font-size: 18px;
+    }
+    .previewBox .addToCart .btn {
+        font-size: 10px;
+    }
+    .previewBox .addToCart {
+        margin-top: 15%;
+    }
+    .previewBox .addToCart .priceTag,.topGameHeader .header {
+        font-size: 15px;
+    }
+    .homeNews .header {
+        width: 80%;
+    }
+    .news {
+        margin: 10% 0;
+    }
+    .previewPlayBtn  {
+        width: 90%;
+        height: 15%;
+    }
+}

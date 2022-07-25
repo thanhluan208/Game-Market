@@ -269,3 +269,36 @@ a {
     color: #3ec2ae !important;
   }
 }
+@media only screen and (max-width: 500px) {
+  .customer .logOut {
+    display: none !important;
+  }
+  .customer .customerAva {
+    width: 35px;
+    height: 35px;
+  }
+  .tabOpen {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .tabOpen {
+    width: 40px;
+    height: 40px;
+  }
+  .tabOpen:nth-child(3) {
+    left: 28%;
+    top: -40%;
+  }
+  .tabOpen:nth-child(4) {
+    top: -55%;
+  }
+  .tabOpen:nth-child(5) {
+    left: 60%;
+    top: -40%;
+  }
+  .tabOpen:nth-child(6) {
+    left: 68%;
+  }
+}

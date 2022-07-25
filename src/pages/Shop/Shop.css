@@ -586,3 +586,104 @@
         width: 45%;
     }
 }
+@media only screen and (max-width:700px) {
+    .poplarGameContainer .popularGames {
+        height: 250px;
+    }
+    .gameInfo .gameName {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .gameInfo .gamePrice {
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+    }
+    .topGameDownloadedDetail {
+        display: none;
+    }
+    .topGameDownloadedBox {
+        width: 100%;
+    }
+    .topGameDownloadedBox .topGameDownloaded:hover {
+        transform: scale(1);
+    }
+    .recommendGame {
+        height: 220px;
+        width: 600px;
+    }
+    .gameSlide {
+        padding-bottom: 2%;
+        height: 330px;
+    }
+}
+@media only screen and (max-width:600px) {
+    .poplarGameContainer .popularGames {
+        height: 250px;
+    }
+    .gameImgBox {
+        height: 65%;
+    }
+    .gameInfo {
+        height: 35%;
+    }
+    .recommendGame {
+        height: 200px;
+        width: 500px;
+    }
+    .recommendGame .recommendGameInfo .recommendGameDesc{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .cartBtn {
+        height: 100px;
+    }
+    .shoppingCartContainer  {
+        height: 300px;
+    }
+    .shoppingCartContainer .cartTitle .title {
+        font-size: 20px;
+    }
+    .shoppingCartContainer .cartTitle .title svg {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .closeCart {
+        height: 30px;
+    }
+    .recommendGame {
+        height: 250px;
+        width: 450px;
+    }
+    .gameSlide {
+        padding-bottom: 2%;
+        height: 400px;
+    }
+    .recommendGame .recommendGameInfo .recommendGameDesc{
+        font-size: 14px;
+    }
+    .gameImgBox {
+        height: 45%; 
+        
+    }
+    .gameInfo .gameName {
+        font-size: 10px;
+    }
+    .cartItemContainer .cartItemImg {
+        width: 40%;
+    }
+    .cartItemContainer .cartItemRemove {
+        min-width: unset;
+        width: 50px;
+    }
+    .cartItemContainer .cartItemPrice {
+        font-size: 18px;
+    }
+    .cartItemContainer .cartInfo {
+        font-size: 15px;
+    }
+}
