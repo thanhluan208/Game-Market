@@ -26,10 +26,10 @@ function Account({ account }) {
   return (
     <React.Fragment>
       <Grid onClick={() => setSelected(!selected)} container className={selected ? "account selected" : "account"}>
-        <Grid item xs={1} className="accountInfo">
+        <Grid item xs={2} className="accountInfo">
           {account.id}
         </Grid>
-        <Grid item xs={3} className="accountInfo">
+        <Grid item xs={2} className="accountInfo">
           {account.UserName}
         </Grid>
         <Grid item xs={2} className="accountInfo">

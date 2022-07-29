@@ -359,7 +359,7 @@
     }
 }
 
-@media only screen and (min-width:1500px) {
+@media only screen and (min-width:1600px) {
     .boxContainer {
         width: 1000px;
     }

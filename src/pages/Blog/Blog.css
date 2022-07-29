@@ -58,6 +58,9 @@
 .inputTag {
     width: 25%;
 }
+.inputTag label,.inputBody label,.inputTitle label {
+    color: #000 !important;
+}
 .inputBody {
     width: 80%;
     margin-top: 20px !important;

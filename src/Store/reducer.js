@@ -9,7 +9,7 @@ import {
 } from "./Constants";
 
 const initState = {
-    GameName: "Counter Strike:Global Offensive",
+    GameName: "",
     customer: {
     
     },

@@ -22,14 +22,13 @@ function Accounts() {
 
   const sortList = ["id", "UserName", "title"];
 
-  const start = currentPage*5-5;
-  const end = currentPage*5;
+  
 
  
 
   useEffect(() => {
     api
-    .get(`/users?_sort=${sortBy}&q=${searchVal}&_start=${start}&_end=${end}`)
+    .get('users?_sort=' + sortBy + '&_start=' + (currentPage*5-5) + '&_end=' + (currentPage*5))
     .then((res) => {
       setUserList(res.data);
       if(res.headers["x-total-count"] === 0){
@@ -78,10 +77,10 @@ function Accounts() {
         />
       </div>
       <Grid container className="AccountsList">
-        <Grid item xs={1} className="listHeader">
+        <Grid item xs={2} className="listHeader">
           User_Id
         </Grid>
-        <Grid item xs={3} className="listHeader">
+        <Grid item xs={2} className="listHeader">
           UserName
         </Grid>
         <Grid item xs={2} className="listHeader">

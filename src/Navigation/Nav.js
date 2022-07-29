@@ -87,15 +87,13 @@ function Nav() {
         >
           About
         </Link>
-        {currentCustomer.UserName === "Thanh Luan" ? (
-          <Link
-            onClick={() => setCurrentPage("admin")}
-            className={currentPage === "admin" ? "pageActive tab" : "tab"}
-            to="/admin"
-          >
-            Admin
-          </Link>
-        ) : null}
+        <Link
+          onClick={() => setCurrentPage("admin")}
+          className={currentPage === "admin" ? "pageActive tab" : "tab"}
+          to="/admin"
+        >
+          Admin
+        </Link>
       </Grid>
       <Grid item xs={2} className="logContainer">
         {currentCustomer?.UserName === undefined ? (

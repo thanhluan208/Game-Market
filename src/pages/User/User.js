@@ -12,6 +12,8 @@ import Games from "./UserGames";
 import Reviews from "./UserReview";
 import EditProfile from "./EditProfile";
 
+import { NotificationContainer } from 'react-notifications';
+
 function User() {
   const [state] = useStore();
   const [customer, setCustomer] = useState(
@@ -54,7 +56,7 @@ function User() {
 
   return (
     <React.Fragment>
-      
+      <NotificationContainer/>
       {customer !== null ? (
         <React.Fragment>
           <div

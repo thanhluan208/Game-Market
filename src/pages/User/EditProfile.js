@@ -21,6 +21,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
+
 function EditProfile() {
   const [state,dispatch] = useStore();
 
@@ -34,7 +35,6 @@ function EditProfile() {
   const [newCustomerBackground, setNewCustomerBackground] = useState(
     customer.backgroundProfile
   );
-  const [newCustomerAvatar, setNewCustomerAvatar]= useState(customer.avatar);
 
   const listBG = [UserBG1, UserBG2, UserBG3];
 
@@ -46,15 +46,7 @@ function EditProfile() {
     setOpen(false);
   };
 
-  const handleInputChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      let reader = new FileReader();
-      reader.onload = (e) => {
-        setNewCustomerAvatar(e.target.result);
-      };
-      reader.readAsDataURL(event.target.files[0]);
-    }
-  }
+
 
   const makePatchRequets = (resource, userID) => {
     api
@@ -63,7 +55,6 @@ function EditProfile() {
         title: newCustomerTitle,
         subtitle: newCustomerSubtitle,
         backgroundProfile: newCustomerBackground,
-        avatar: newCustomerAvatar,
       })
       .then((res) => {
         dispatch(actions.setCustomer(res.data));
@@ -154,16 +145,6 @@ function EditProfile() {
                 );
               })}
             </div>
-          </div>
-          <div className="editAvatarContainer">
-            <div className="editAvatarTitle">Change your avatar</div>
-            <label className="editAvatarBox" htmlFor="contained-button-file">
-              <input accept="image/*" id="contained-button-file" multiple type="file" onChange={(e) => handleInputChange(e)}/>
-              <Button className="uploadImg" variant="contained" component="span">
-                Upload
-              </Button>
-            </label>
-            {/* <img></img> */}
           </div>
         </Box>
       </Dialog>

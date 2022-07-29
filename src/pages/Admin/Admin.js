@@ -9,13 +9,13 @@ import NewspaperIcon from '@mui/icons-material/Newspaper';
 
 import Accounts from './Accounts'
 import Boxes from '../../Component/Box'
+import Posts from './Posts'
 import Orders from './Orders'
 import Reviews from './Reviews'
 import News from './News'
 import { NotificationContainer } from 'react-notifications';
 
 
-import img from '../../Images/Customer/customerAva1.jpg'
 
 import "./Admin.css";
 
@@ -23,7 +23,6 @@ function Admin() {
 
   const [activeTab, setActiveTab] = useState("accounts")
   
-  console.log(img)
 
   return (
     <Grid container style={{height:"90vh"}}>
@@ -54,7 +53,7 @@ function Admin() {
       </Grid>
       <Grid item xs={10} style={{padding:"0 2%"}}>
         {activeTab === "accounts" && <Accounts />}
-        {activeTab === "posts" && <Boxes/>}
+        {activeTab === "posts" && <Posts/>}
         {activeTab === "orders" && <Boxes/>}
         {activeTab === "reviews" && <Boxes/>}
         {activeTab === "news" && <Boxes/>}
