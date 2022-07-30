@@ -21,7 +21,14 @@ import "./Shop.css";
 import { NotificationContainer } from "react-notifications";
 import { CreateNotification } from "../../Component/Notification";
 
-
+import item1 from '../../Images/Shop/item1.jpg';
+import item2 from '../../Images/Shop/item2.jpg';
+import item3 from '../../Images/Shop/item3.jpg';
+import item4 from '../../Images/Shop/item4.jpg';
+import item5 from '../../Images/Shop/item5.jpg';
+import item6 from '../../Images/Shop/item6.jpg';
+import item7 from '../../Images/Shop/item7.jpg';
+import item8 from '../../Images/Shop/item8.jpg';
 
 function Shop() {
   const [total, setTotal] = useState(0);
@@ -34,7 +41,6 @@ function Shop() {
   const [cartItem, setCartItem] = useState(state.cartItems);
 
   const currentCustomer = state.customer;
-
 
 
   useEffect(() => {
