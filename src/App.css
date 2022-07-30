@@ -51,7 +51,18 @@ body {
   padding: 0;
 }
 
+body::-webkit-scrollbar {
+  display: unset;
+}
 
+body::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #42b0a0;
+  border-radius: 15px;
+}
 .notification-container {
   width: 400px !important;
 }

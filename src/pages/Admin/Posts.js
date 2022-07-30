@@ -1,5 +1,8 @@
 import React, { useEffect, useState, useRef, useCallback } from "react";
 
+import { Button } from "@mui/material";
+import SortIcon from "@mui/icons-material/Sort";
+
 import api from "../../api/api";
 
 import Post from "./Post";
@@ -8,24 +11,25 @@ function Posts() {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [maxPage, setMaxPage] = useState(0);
-  const [sortBy, setSortBy] = useState("id");
-  const [hasMore, setHasMore] = useState(true)
+  const [sortId , setSortId] = useState(0);
+  const [sortAuthor , setSortAuthor] = useState(0);
+  const [sortTag , setSortTag] = useState(0);
+  const [sortCreatedAt , setSortCreatedAt] = useState(0);
 
   useEffect(() => {
     api
       .get(
-        "/posts?_sort=" +
-          sortBy +
+        "/posts?" +
           "&_start=" +
           (currentPage * 10 - 10) +
           "&_end=" +
           currentPage * 10
       )
       .then((res) => {
-        if(posts.length === 0) {
+        if (posts.length === 0) {
           setPosts(res.data);
         }
-        if (posts.length > 0 ) {
+        if (posts.length > 0) {
           setPosts([...posts, ...res.data]);
         }
         if (res.headers["x-total-count"] === 0) {
@@ -37,7 +41,7 @@ function Posts() {
       .catch((err) => {
         console.log(err);
       });
-  }, [currentPage, sortBy]);
+  }, [currentPage]);
 
   const observer = useRef();
   const lastPost = useCallback(
@@ -52,36 +56,109 @@ function Posts() {
         { threshold: 1 }
       );
       if (node) observer.current.observe(node);
-    },[currentPage,maxPage]);
+    },
+    [currentPage, maxPage]
+  );
 
-    console.log(currentPage)
+  const handleSortId = () => {
+    setSortId(sortId + 1);
+    if(sortId % 2 === 1) {
+      console.log("sorting")
+      posts.sort((a, b) => a.id - b.id);
+    }
+    else {
+      posts.sort((a, b) => b.id - a.id);
+    }
+  }
+
+  const handleSortAuthor = () => {
+    setSortAuthor(sortAuthor + 1);
+    if(sortAuthor % 2 === 1) {
+      console.log("sorting")
+      posts.sort((a, b) => a.author.localeCompare(b.author));
+    }
+    else {
+      posts.sort((a, b) => b.author.localeCompare(a.author));
+    }
+  }
+
+  const handleSortTag = () => {
+    setSortTag(sortTag + 1);
+    if(sortTag % 2 === 1) {
+      console.log("sorting")
+      posts.sort((a, b) => a.tag.localeCompare(b.tag));
+    }
+    else {
+      posts.sort((a, b) => b.tag.localeCompare(a.tag));
+    } 
+  }
+
+  const handleSortCreateAt = () => {
+    setSortCreatedAt(sortCreatedAt + 1);
+    if(sortCreatedAt % 2 === 1) {
+      console.log("sorting")
+      posts.sort((a, b) => {
+        const dateA = new Date(a.createdAt);
+        const dateB = new Date(b.createdAt);
+        return dateA - dateB;
+      });
+    }
+    else {
+      posts.sort((a, b) => {
+        const dateA = new Date(a.createdAt);
+        const dateB = new Date(b.createdAt);
+        return dateB - dateA;
+      });
+    }
+  }
 
   return (
     <div className="adminPostsContainer">
       <div className="adminPostsBox">
-        <div className="adminPostsHeader">ID</div>
-        <div className="adminPostsHeader">Author</div>
-        <div className="adminPostsHeader">Tag</div>
-        <div className="adminPostsHeader">CreatedAt</div>
-        <div className="adminPostsHeader">Actions</div>
+        <div className="adminPostsHeader">
+          ID
+          <Button onClick={() => handleSortId()} className="sortBtn">
+            <SortIcon />
+          </Button>
+        </div>
+        <div className="adminPostsHeader">
+          Author
+          <Button onClick={() => handleSortAuthor()} className="sortBtn">
+            <SortIcon />
+          </Button>
+        </div>
+        <div className="adminPostsHeader">
+          Tag
+          <Button onClick={() => handleSortTag()} className="sortBtn">
+            <SortIcon />
+          </Button>
+        </div>
+        <div className="adminPostsHeader">
+          CreatedAt
+          <Button onClick={() => handleSortCreateAt()} className="sortBtn">
+            <SortIcon />
+          </Button>
+        </div>
+        <div className="adminPostsHeader">
+          Actions
+        </div>
       </div>
       <div className="adminPosts">
         {posts.length > 0 ? (
           posts.map((post, index) => {
-            if(index === currentPage * 10 - 1) {
-              return(
+            if (index === currentPage * 10 - 1) {
+              return (
                 <div key={index} ref={lastPost}>
-                  <Post post={post}/>
+                  <Post post={post} />
                 </div>
-              )
+              );
             } else {
-              return(
+              return (
                 <div key={index}>
-                  <Post post={post}/>
+                  <Post post={post} />
                 </div>
-              )
+              );
             }
-
           })
         ) : (
           <div> LOADING ... </div>

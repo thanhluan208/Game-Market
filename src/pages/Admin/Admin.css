@@ -236,7 +236,7 @@ label {
 .modalAlert {
   width: 20%;
   height: 20%;
-  position: absolute;
+  position: fixed;
   top: 40%;
   left: 40%;
   backdrop-filter: blur(10px);
@@ -261,59 +261,80 @@ label {
 }
 
 .adminPostsContainer {
-    margin-top: 5%;
-    position: relative;
+  margin-top: 5%;
+  position: relative;
 }
 
 .adminPostsBox {
-    width: 100%;
+  padding: 0 2%;
 }
 
 .adminPosts {
-    overflow: auto;
-    height: 90%;
+  overflow: auto;
+  height: 90%;
+  padding: 2%;
 }
 
-.adminPostsHeader,.adminPost {
-    display: inline-block;
-    font-size: 24px;
-    color: #fff;
+.adminPostsHeader,
+.adminPost {
+  display: inline-block;
+  font-size: 24px;
+  color: #fff;
+  position: relative;
 }
 
 .adminPostContent {
-    height: 50px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 15px 0;
-    padding: 20px 0;
-    overflow: hidden;
-    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 50px;
+  margin: 25px 0;
+  padding-top: 20px ;
+  overflow: hidden;
+  transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 15px;
+  box-shadow: 0 -3px 3px rgb(255 255 255 / 50%), 0 3px 3px rgb(62 194 174);
 }
 
 .expand {
-    height: 100px;
+  height: 150px;
+  overflow: auto;
 }
 
-.adminPostsHeader:nth-child(1),.adminPostID {
-    width: 10%;
+.adminPostsHeader:nth-child(1),
+.adminPostID {
+  width: 10%;
 }
-.adminPostsHeader:nth-child(2),.adminPostAuthor {
-    width: 20%;
+.adminPostsHeader:nth-child(2),
+.adminPostAuthor {
+  width: 20%;
 }
-.adminPostsHeader:nth-child(3),.adminPostTag {
-    width: 10%;
+.adminPostsHeader:nth-child(3),
+.adminPostTag {
+  width: 10%;
 }
-.adminPostsHeader:nth-child(4),.adminPostCreatedAt {
-    width: 20%;
+.adminPostsHeader:nth-child(4),
+.adminPostCreatedAt {
+  width: 20%;
 }
-.adminPostsHeader:nth-child(5),.adminPostActions {
-    width: 40%;
+.adminPostsHeader:nth-child(5),
+.adminPostActions {
+  width: 40%;
 }
 
 .adminPostBody {
-    width: 100%;
-    margin-top: 40px;
-    text-align: left;
-    padding: 0 5%;
+  width: 90%;
+  margin-top: 40px;
+  text-align: left;
+  padding: 0 5%;
+}
+
+.sortBtn {
+  position: absolute !important;
+  top: 0;
+  padding: 0 !important;
+  color: #fff !important;
+  min-width: unset !important;
+  min-height: unset !important;
+  width: 50px;
+  height: 100%;
 }
 
 /* media break point */
