@@ -281,3 +281,108 @@
     color: #fff;
     font-size: 20px;
 }
+
+.signInTablet {
+    display: none;
+}
+
+@media only screen and (max-width: 1080px) {
+    .logInBox {
+        display: none !important;
+    }
+    .signInTablet,.signUpTablet {
+        display: unset !important;
+        width: 50%;
+        height: 90%;
+        padding: 5%;
+        backdrop-filter: blur(5px);
+    }
+    .signInTabletHeader,.signUpTabletHeader {
+        font-size: 32px;
+        font-weight: 600;
+        color: #fff;
+        text-align: left;
+    }
+    .signInTabletInput,.signUpTabletName,.signUpTabletInput {
+        margin-top: 5% !important;
+        width: 80%;
+        margin-right: 20% !important;
+    }
+    .signUpTabletNameInput {
+        width: 45%;
+        display: inline-block;
+    }
+    .signInTabletInput div,.signUpTabletName div,.signUpTabletInput div {
+        border-radius: 15px;
+    }
+    .signInTabletText {
+        margin-top: 5%;
+        text-align: right;
+        width: 80%;
+        color: #fff;
+    }
+    
+    .signInTabletBtn,.signUpTabletbtn {
+        width: 80%;
+        background-color: #3ec2ae !important;
+        margin-right: 20% !important;
+        margin-top: 5% !important;
+        color: #fff !important;
+        border-radius: 25px !important;
+    }
+    .signInMedia {
+        width: 60%;
+        margin-left: 10%;
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .signInMediabtn {
+        color: #fff !important;
+        background-color: rgba(255,255,255,0.3) !important;
+        border-radius: 50% !important;
+        min-height: unset !important;
+        min-width: unset !important;
+        width: 50px;
+        height: 50px;
+    }
+    .signInSwitch,.signUpTabletSwitch {
+        width: 80%;
+        margin-right: 20%;
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+    }
+    .signInSwitchText,.signUpTabletSwitchText {
+        width: 70%;
+        height: 100%;
+        color: #fff;
+    }
+    .signInSwitchBtn,.signUpTabletSwitchBtn {
+        color: #3ec2ae !important;
+    }
+    
+}
+@media only screen and (max-width:600px) {
+    .signInTabletHeader,.signUpTabletHeader {
+        font-size: 24px;
+    }
+    .signInTablet,.signUpTablet {
+        width: 65%;
+    }
+    .signInTabletInput,.signInTabletText,.signInTabletBtn,.signInMedia,.signInSwitch,.signUpTabletName,.signUpTabletInput,.signUpTabletbtn,.signUpTabletSwitch {
+        width:100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+    
+}
+
+@media only screen and (max-width:400px) {
+    .signInTablet,.signUpTablet {
+        width: 100%;
+    }
+    .signInTabletInput,.signInTabletText,.signInTabletBtn,.signInMedia,.signInSwitch,.signUpTabletName,.signUpTabletInput,.signUpTabletbtn,.signUpTabletSwitch {
+        margin-top: 8% !important;
+    }
+}

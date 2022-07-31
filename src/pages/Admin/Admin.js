@@ -27,7 +27,7 @@ function Admin() {
   return (
     <Grid container style={{height:"90vh"}}>
       <NotificationContainer/>
-      <Grid item xs={2} className="sidebarContainer">
+      <Grid item xs={12} md={2} className="sidebarContainer">
         <div className={"sidebarBox"}>
           <Button onClick={() => setActiveTab("accounts")} className={activeTab === "accounts" ? "adminTab activeTab" : "adminTab"}>
             <AccountBoxIcon/>
@@ -51,7 +51,7 @@ function Admin() {
           </Button>
         </div>
       </Grid>
-      <Grid item xs={10} style={{padding:"0 2%"}}>
+      <Grid item xs={12} md={10} className="adminContent">
         {activeTab === "accounts" && <Accounts />}
         {activeTab === "posts" && <Posts/>}
         {activeTab === "orders" && <Boxes/>}

@@ -337,6 +337,10 @@ label {
   height: 100%;
 }
 
+.adminContent {
+  padding: 0 2%;
+}
+
 /* media break point */
 
 @media only screen and (max-width: 1080px) {
@@ -347,8 +351,43 @@ label {
   .account .listUlti .accountUpdate {
     font-size: 10px;
   }
-
+}
+@media only screen and (max-width:900px) {
   .sidebarContainer .sidebarBox {
-    width: 60%;
+    width: 95%;
+    height: 80px;
+    flex-direction: row;
+    margin-top: 5%;
+    position: relative;
+    justify-content: space-around;
   }
+  .sidebarContainer .sidebarBox .activeTab {
+    width: 10%;
+  }
+  .adminContent {
+    height: 60vh;
+  }
+}
+@media only screen and (max-width:600px) {
+  .sidebarContainer .sidebarBox .adminTab .activeTabContent {
+    display: none;
+  }
+  .AccountsList .listHeader, .account .accountInfo {
+    font-size: 12px;
+  }
+  .sidebarContainer .sidebarBox .adminTab {
+    margin: 0;
+  }
+  .adminContent {
+    padding: 0 ;
+  } 
+}
+@media only screen and (max-width:400px) {
+  .AccountsList .listHeader, .account .accountInfo {
+    font-size: 10px;
+  }
+  .account .listUlti .accountUpdate {
+    display: none;
+  }
+  
 }

@@ -41,7 +41,8 @@ function SignIn({ accountStatus }) {
         if (res.data.length > 0) {
           localStorage.setItem("user",JSON.stringify(res.data[0]))
           dispatch(actions.setCustomer(res.data[0]));
-          navigate("/user");
+          localStorage.setItem("page", JSON.stringify(""));
+          navigate("/");
         } else {
           CreateNotification(
             "error",
@@ -64,8 +65,10 @@ function SignIn({ accountStatus }) {
           .post(`${resource}`, data)
           .then((res) => {
             CreateNotification("success", "Sign up success", "Sign up success");
+            localStorage.setItem('user',JSON.stringify(res.data));
             dispatch(actions.setCustomer(res.data));
-            navigate("/user");
+            localStorage.setItem("page", JSON.stringify(""));
+            navigate("/");
           })
           .catch((err) => {
             console.log(err);
