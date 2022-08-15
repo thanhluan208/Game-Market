@@ -923,6 +923,16 @@
       "orders": 0,
       "createdAt": "2022-07-24T02:53:01.872Z",
       "id": 7
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$ogBBaAxtKTj7JeEIN67s9uMHei5zJnWTNcRDN8ZfKjQj84tkgYYo2",
+      "id": 8
+    },
+    {
+      "email": "thanhluan20880@gmail.com",
+      "password": "$2a$10$a3SuKCqpWOvsZ.41CUNZJurJ8sIPJGBkEyxo3pN2li0d9Nu979hTu",
+      "id": 9
     }
   ],
   "games": [
