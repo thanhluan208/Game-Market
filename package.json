@@ -4,14 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start" : "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "json-server": "^0.17.0",
-    "json-server-auth": "^2.1.0"
+  "dependencies": {
+    "json-server": "^0.17.0"
   }
 }
